@@ -6,7 +6,7 @@ public class PowerOfTwo {
 System.out.println("ENTER A NUMBER WITH IN 31");
 int n=0;       
 // read in one command-line argument
-
+int a= 0;
         n = Integer.parseInt(args[0]);
   if(n>30) {
 	  System.err.println("enter value with in 31 run again with valid input");
