@@ -9,9 +9,7 @@ public class harmonic {
 		for(int i = 1 ;  i<=n ; i++) {
 			sum  = sum +(float )1/i;
 			System.out.println(sum);
-			
 		}
-
 	}
 
 }
