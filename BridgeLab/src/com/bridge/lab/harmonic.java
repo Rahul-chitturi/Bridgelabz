@@ -10,6 +10,7 @@ public class harmonic {
 			sum  = sum +(float )1/i;
 			System.out.println(sum);
 		}
+		
 	}
 
 }
