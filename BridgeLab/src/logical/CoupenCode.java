@@ -13,7 +13,7 @@ public class CoupenCode {
 		/*
 		 * char array to get characters for coupen
 		 */
-		char[] chars = "abcdefghijklmnop".toCharArray();
+		char[] chars = "abcdefghijklmnop135654535".toCharArray();
 		/*
 		 * length of coupen
 		 */

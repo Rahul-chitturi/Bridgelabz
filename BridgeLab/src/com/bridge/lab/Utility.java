@@ -181,7 +181,7 @@ public class Utility {
 	 * @param y int value for year
 	 * @return day of week from 1 to 7
 	 */
-	static int dayOfWeek(int d, int m, int y) {
+public 	static int dayOfWeek(int d, int m, int y) {
 		int y0 = y - (14 - m) / 12;
 		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
 		int m0 = m + 12 * ((14 - m) / 12) - 2;
@@ -197,7 +197,7 @@ public class Utility {
 	 * @return converted temperature
 	 */
 	
-	static int temperaturConversion(int tem, char t) {
+	public static int temperaturConversion(int tem, char t) {
 		int conver;
 		if (t == 'c' || t == 'C') {
 			conver = (tem * 9 / 5) + 32;
@@ -219,7 +219,7 @@ public class Utility {
 	 * @param r the rate at which p is given
 	 * @return monthly payment
 	 */
-	static double monthlyPayment(double p, double y, double r) {
+ public	static double monthlyPayment(double p, double y, double r) {
 		double n = 12 * y;
 		double r0 = r / (12 * 100);
 		double payment = p * r0 / (1 - Math.pow((1 + r0), -n));
@@ -232,7 +232,7 @@ public class Utility {
 	 * @param c the value to find square root of
 	 * @return return the square root
 	 */
-	static double sqrt(double c) {
+ public	static double sqrt(double c) {
 
 		double t = c;
 		double epsilon = 1e-15;
@@ -249,7 +249,7 @@ public class Utility {
 	 * @param d integer value to convert
 	 * @return return integer array with binary digits
 	 */
-	static int[] toBinary(int d) {
+	public static int[] toBinary(int d) {
 
 		String bin = "";
 		while (d != 0) {
@@ -283,7 +283,7 @@ public class Utility {
 	 * @param binary the binary array to convert
 	 * @return return converted decimal no
 	 */
-	static int toDecimal(int[] binary) {
+	public static int toDecimal(int[] binary) {
 		int dec = 0, j = 0;
 		for (int i = binary.length - 1; i>= 0; i--) {
 			if (binary[i] == 1) {
