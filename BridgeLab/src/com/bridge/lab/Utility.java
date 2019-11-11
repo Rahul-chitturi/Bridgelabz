@@ -1,6 +1,55 @@
 package com.bridge.lab;
-
+import java.io.*;
 public class Utility {
+	
+	
+	static  PrintWriter pw = new PrintWriter(System.out);
+	/**
+	 * FUnction to print the  integer 2DARRAY  
+	 * @param n the 2Darrya
+	 */
+	public static void PrintArr(int a[][]) {
+		for(int b[] : a ) {
+			for( int  c : b) {
+				
+				pw.print(c+" ");
+				pw.flush();
+			}
+			System.out.println();
+		}
+	}
+	/**
+	 * FUnction to print the  doubles 2DARRAY  
+	 * @param n the 2Darrya
+	 */
+	public static void PrintArr(double a[][]) {
+		for(double b[] : a ) {
+			for( double  c : b) {
+				pw.print(c+" ");
+				pw.flush();
+			}
+			System.out.println();
+		}
+	}
+	/**
+	 * FUnction to print the  boolean 2DARRAY  
+	 * @param n the 2Darrya
+	 */
+	public static void PrintArr(boolean a[][]) {
+		for(boolean b[] : a ) {
+			for( boolean  c : b) {
+			if(c ==  true) {
+				pw.print("1 ");
+				pw.flush();
+			}
+			else {
+				pw.print("0 ");
+				pw.flush();
+			}
+			}
+			System.out.println();
+		}
+	}
 
 	/**
 	 * Function to count the characters in a string alphabaticlally and return array
