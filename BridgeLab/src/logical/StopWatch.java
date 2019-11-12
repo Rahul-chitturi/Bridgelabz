@@ -19,6 +19,7 @@ public class StopWatch {
 	 * Function to put start time and print it
 	 */
 	static void startTime() {
+		double r = System.currentTimeMillis();
 		start = System.currentTimeMillis();
 		System.out.println("started at " + start);
 	}

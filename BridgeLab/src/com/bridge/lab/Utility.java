@@ -1,9 +1,71 @@
 package com.bridge.lab;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Utility {
 	
 	
 	static  PrintWriter pw = new PrintWriter(System.out);
+	/*
+	 * 
+	 * 
+	 */
+	public static int[] insertionSort(int[] a) {
+	int n = a.length , value = 0 , hole = 0 ; 
+	for(int i = 0 ; i<=n-1 ; i++) {
+	value = a[i];
+	hole = i;
+	while(hole>0&&a[hole-1]>value) {
+		a[hole] = a[hole-1];
+		hole = hole -1;
+	}
+	a[hole]=value;
+	}
+	return a ; 
+	}
+	
+	
+	/**
+	 * Function to sort implementing bubble sort algorithm
+	 * 
+	 * @param arr
+	 * @return
+	 */
+	public static int[] bubbleSort(int[] arr) {
+		int temp;
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i] > arr[j]) {
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+
+				}
+			}
+
+		}
+		return arr;
+	}
+
+	/**
+	 * Function to sort string array using bubble sort algorithm
+	 * 
+	 * @param arr the array which needs to be sorted
+	 */
+	public static void bubbleSort(String[] arr) {
+		String temp;
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = i + 1; j < arr.length; j++) {
+				if (arr[i].compareToIgnoreCase(arr[j]) > 0) {
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+
+				}
+			}
+		}
+	}
+	
 	/**
 	 * FUnction to print the  integer 2DARRAY  
 	 * @param n the 2Darrya
@@ -102,6 +164,52 @@ public class Utility {
 			}
 		}
 		return true;
+	}
+	/**
+	 * Function helping prime() to check if prime is pallindrome and print it
+	 */
+	public static void primePallindrome() {
+		System.out.println();
+		boolean b;
+		for (int j = 2; j <= 1000; j++) {
+			b = true;
+			for (int i = 2; i < j / 2; i++) {
+				if (j % i == 0) {
+					b = false;
+					break;
+				}
+			}
+			if (b && isPallindrome(j))
+				System.out.print(j + " ");
+		}
+	}
+	
+
+	/**
+	 * Function to check if no is anagram or not
+	 */
+	public static void primeAnagrams() {
+		ArrayList<Integer> ar = new ArrayList<Integer>();
+		System.out.println();
+		boolean b;
+		for (int j = 2; j <= 1000; j++) {
+			b = true;
+			for (int i = 2; i < j / 2; i++) {
+				if (j % i == 0) {
+					b = false;
+					break;
+				}
+			}
+			if (b)
+				ar.add(j);
+		}
+		for (int i = 0; i < ar.size(); i++) {
+			for (int j = i + 1; j < ar.size(); j++) {
+				if (anagram(ar.get(i), ar.get(j))) {
+					System.out.println(ar.get(i) + "  " + ar.get(j));
+				}
+			}
+		}
 	}
 	/**
 	 * to check the values are anagrams or not
@@ -210,7 +318,47 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		}
 		return conver;
 	}
+	
 
+	public static int binary(int[]arr , int n) {
+	   int high = arr.length-1  , low = 0 , mid ; 
+	   Arrays.sort(arr);
+	   while(low<=high) {
+		   mid = (high+low)/2;
+		   if(n==arr[mid]) {
+			   return mid;
+		   }else if(arr[mid]<n) {
+			   low = mid+1;
+		   }else {
+			   high = mid -1;
+		   }
+	   }
+		return -1;
+	}
+	
+/**
+ * to search a word using binary
+ * @param arr
+ * @param s word which is to be searched 
+ * @return integer index 
+ */
+	public static int binary(String[] arr ,String s) {
+		int high = arr.length-1 , low = 0 , mid;
+		Arrays.sort(arr);
+		
+		while(low<=high) {
+			mid =(high+low)/2;
+			if(s.equalsIgnoreCase(arr[mid])) {
+				return mid;
+			}else if(arr[mid].compareToIgnoreCase(s)<0) {
+				low = mid+1;
+			}else {
+				high = mid-1;
+			}
+		}
+		
+		return -1;
+	}
 	/**
 	 * to calculate monthly payment for r interest and p principal for y years
 	 *
