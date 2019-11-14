@@ -1,4 +1,4 @@
-package dataStructure;
+package com.bridgelab.datastrure;
 import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.FileReader;

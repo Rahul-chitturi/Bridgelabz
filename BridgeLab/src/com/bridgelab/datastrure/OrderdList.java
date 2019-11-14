@@ -1,4 +1,4 @@
-package dataStructure;
+package com.bridgelab.datastrure;
 
 /**
  * @author Rahul C H

@@ -1,4 +1,4 @@
-package dataStructure;
+package com.bridgelab.datastrure;
 
 public class Node {
 	
