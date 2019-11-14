@@ -1,14 +1,26 @@
+/********************************************************************************************
+ * @purpose  :Utility class for reusable codes
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :Utility.java
+ ********************************************************************************************/
+
 package com.bridgelab.utility;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
+
 public class Utility {
-	
-	
-	static  PrintWriter pw = new PrintWriter(System.out);
-	/*
-	 * 
-	 * 
+	// resuable static object for scanner class  
+		public static Scanner scan =  new Scanner(System.in);
+    //reusable static Object for PrintWriter class 
+		public static PrintWriter pw = new PrintWriter(System.out);
+	/**
+	 * function  to sort a arrya using insertion sort
+	 * @param takes input  unsorted Integer array
+	 * @return sorted integer array
 	 */
 	public static int[] insertionSort(int[] a) {
 	int n = a.length , value = 0 , hole = 0 ; 
@@ -66,6 +78,7 @@ public class Utility {
 		}
 	}
 	
+	
 	/**
 	 * FUnction to print the  integer 2DARRAY  
 	 * @param n the 2Darrya
@@ -80,6 +93,7 @@ public class Utility {
 			System.out.println();
 		}
 	}
+	
 	/**
 	 * FUnction to print the  doubles 2DARRAY  
 	 * @param n the 2Darrya
@@ -233,7 +247,6 @@ public class Utility {
 	 * Function to print the prime no between to 1 to 1000
 	 */
 	public static void prime() {
-		System.out.println();
 		boolean b;
 		for (int j = 2; j <= 1000; j++) {
 			b = true;
