@@ -19,7 +19,7 @@ public class Harmonic {
 			System.out.println(sum);
 		}
 	}catch(Exception e) {
-	  System.out.println(e + " \nenter commond line arguments");
+	  System.out.println(e + " \n enter commond line arguments");
 	}
 	}
 

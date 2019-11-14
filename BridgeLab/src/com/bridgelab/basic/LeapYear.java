@@ -1,6 +1,12 @@
 package com.bridgelab.basic;
-
-import java.util.Scanner;
+/********************************************************************************************
+ * Purpose   :To fine the given year is leap or not 
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :LeapYear.java
+ ********************************************************************************************/
+import com.bridgelab.utility.Utility;
 
 public class LeapYear {
 	/**
@@ -14,23 +20,25 @@ public class LeapYear {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		System.out.println("enter year in 4 digit");
-		int year = s.nextInt();
-		/*
-		 * ensures the value is 4 digit
-		 */
-		while (year < 999 || year > 9999) {
-			System.out.println("wrong input");
-			System.out.println("enter year in 4 digit");
-			year = s.nextInt();
-		}
-		if (isLeap(year)) {
-			System.out.println(year + " is a leap year");
-		} else
-			System.out.println(year + " is not a leap year");
-		s.close();
+			try {
+				System.out.println("enter year in 4 digit");
+				int year = Utility.scan.nextInt();
+			/*
+			 * ensures the value is 4 digit
+			 */
+			while (year < 999 || year > 9999) {
+				System.out.println("wrong input");
+				System.out.println("enter year in 4 digit");
+				year = Utility.scan.nextInt();
+			}
+			if (isLeap(year)) {
+				System.out.println(year + " is a leap year");
+			}else
+				System.out.println(year + " is not a leap year");
 
-	}
-
-}
+				Utility.scan.close();
+			}catch(Exception e) {
+				System.out.println(e +" Enter valid input");
+			}
+			}
+			}
