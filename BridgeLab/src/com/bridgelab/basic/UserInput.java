@@ -16,7 +16,7 @@ public class UserInput {
 			while(FLAG!=0) {
 			USER_NAME = Utility.scan.next();
 			if(USER_NAME.length()< 4) {
-				System.out.println("enter valid name");
+				System.out.println("enter valid user name");
 			}else {
 			FLAG = 0 ;
 			}
