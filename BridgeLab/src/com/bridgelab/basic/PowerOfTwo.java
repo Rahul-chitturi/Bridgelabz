@@ -7,6 +7,9 @@
  ********************************************************************************************/
 package com.bridgelab.basic;
 public class PowerOfTwo {
+	   /*
+	    * The main function is written to test PowerOfTwo  class
+	    */
 public static void main(String[] args) {
 	try {
     System.out.println("ENTER A NUMBER WITH IN 31");

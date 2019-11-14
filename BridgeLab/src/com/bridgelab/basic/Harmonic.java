@@ -22,5 +22,4 @@ public class Harmonic {
 	  System.out.println(e + " \n enter commond line arguments");
 	}
 	}
-
 }

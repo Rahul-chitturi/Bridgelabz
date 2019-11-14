@@ -23,9 +23,12 @@ static void primeFactors(int n) {
 			if (Utility.isPrime(i))
 				System.out.println(i + " ");
 		}
-	}
+	}  
 }
-
+/**
+ *  The main function is written to test PrimeFactor class
+ * @param args
+ */
 public static void main(String[] args) {
 	System.out.println("enter no to find prime factors");
 	int n = Utility.scan.nextInt();

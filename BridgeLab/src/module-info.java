@@ -6,4 +6,5 @@
  *
  */
 module BridgeLab {
+	requires org.junit.jupiter.api;
 }

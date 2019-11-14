@@ -8,6 +8,9 @@
 package com.bridgelab.basic;
 import com.bridgelab.utility.Utility;
 public class UserInput {
+	   /*
+	    * The main function is written to test UserInput class
+	    */
 			public static void main(String[] args) {
 			try {
 			int FLAG = 1;
@@ -28,5 +31,4 @@ public class UserInput {
 			System.out.println(e);
 		}
 	}
-
 }
