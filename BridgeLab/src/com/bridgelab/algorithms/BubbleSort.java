@@ -1,3 +1,10 @@
+/********************************************************************************************
+ * Purpose   :To  bubblesort the given array
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :Bubblesort.java
+ ********************************************************************************************/
 package com.bridgelab.algorithms;
 
 import com.bridgelab.utility.Utility;

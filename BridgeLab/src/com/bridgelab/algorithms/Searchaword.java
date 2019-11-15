@@ -1,9 +1,15 @@
 package com.bridgelab.algorithms;
+/********************************************************************************************
+ * Purpose   :Program to search word from file and print
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :PowerOfTwo.java
+ ********************************************************************************************/
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import com.bridgelab.utility.Utility;
 public class Searchaword {
@@ -34,16 +40,15 @@ public class Searchaword {
 		for(String s: str) {
 			System.out.println(s);
 		}
-		Scanner scan = new Scanner(System.in);
 		System.out.println("enter word to search");
-		String s = scan.nextLine();
+		String s = Utility.scan.nextLine();
 		int n  = Utility.binary(str, s);
 		if(n>0) {
 			System.out.println("found");
 		}else {
 			System.out.println("not found");
 		}
-		scan.close();
+		Utility.scan.close();
 	}catch(Exception e ) {
 		System.out.println(e);
 	}

@@ -1,20 +1,27 @@
 package com.bridgelab.algorithms;
 import java.io.PrintWriter;
-import java.util.*;
+/********************************************************************************************
+ * Purpose   :Program to print PrintPrime number
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :PowerOfTwo.java
+ ********************************************************************************************/
+
+import com.bridgelab.utility.Utility;
 public class PrintPrime {
 
 	public static void main(String[] args) {
 		PrintWriter pw = new PrintWriter(System.out);
-		Scanner scan = new Scanner(System.in);
 	   System.out.println("enter number in 0- 1000");
-       int n =   scan.nextInt();
+       int n =   Utility.scan.nextInt();
        for(int i = 2 ; i<= n ; i++) {
     	   if(isPrime(i)) {
     	   pw.print(i+" ");
     	   pw.flush();
     	   }
        }
-       scan.close();
+       Utility.scan.close();
 	}
 /**
  * to find given number is prime or not 

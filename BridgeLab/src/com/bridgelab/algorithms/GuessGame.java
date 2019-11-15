@@ -3,13 +3,17 @@ package com.bridgelab.algorithms;
 	 * Purpose  :Guess the number given by user and check by asking user,, imlementing binary search 
      *
 	 * @author  :RAHUL CHITTURI
-     * @version :10.0
+     * @version :1.0
      * @since   :11-11-2019
 	 ******************************************************************************/
 
 import com.bridgelab.utility.Utility;
 
 public class GuessGame {
+	/**
+	 * function to fine the number
+	 * @return low
+	 */
 	static int find() {
 
 		int low = 0, high = 127, mid;

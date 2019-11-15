@@ -8,7 +8,6 @@ static ArrayList<String> arr = new ArrayList<String>();
  String name =  scan.nextLine();
  scan.close();
   printDistinctPermutn(name , "");
-
  System.out.println(arl);
  System.out.println(arr);
  if(arl.equals(arr)) {

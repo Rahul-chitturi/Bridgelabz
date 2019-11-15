@@ -1,13 +1,11 @@
 package com.bridgelab.algorithms;
-
 import com.bridgelab.utility.Utility;
-
-
-/******************************************************************************
- * Compilation: javac -d bin Prime.java Execution: java -cp bin
- * com.bridgelabz.util.Prime n
- * 
- * Purpose: to find the prime no between 0 to 1000 an if they are pallindrome or anagram or not
+ /********************************************************************************************
+ * Purpose   : to find the prime no between 0 to 1000 an if they are pallindrome or anagram or not
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :14-11-2019
+ * @Filename :Prime.java
  ******************************************************************************/
 
 public class Prime {
