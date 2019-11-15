@@ -7,7 +7,8 @@ package com.bridgelab.functional;
  * @since 11-11-2019
  *
  ******************************************************************************/
-import java.util.Scanner;
+
+import com.bridgelab.utility.Utility;
 
 public class Quadratic {
 
@@ -34,18 +35,17 @@ public class Quadratic {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
 		try {
 			System.out.println("enter a ");
-			int a = s.nextInt();
+			int a = Utility.scan.nextInt();
 			System.out.println("enter b");
-			int b = s.nextInt();
+			int b = Utility.scan.nextInt();
 			System.out.println("enter c");
-			int c = s.nextInt();
+			int c = Utility.scan.nextInt();
 			roots(a, b, c);
 		} catch (Exception e) {
 			System.out.println("enter correct input");
 		}
-		s.close();
+		Utility.scan.close();
 	}
 }

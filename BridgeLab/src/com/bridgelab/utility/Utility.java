@@ -54,7 +54,6 @@ public class Utility {
 
 				}
 			}
-
 		}
 		return arr;
 	}
@@ -327,7 +326,6 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		} else {
 			System.out.println("Enter correct input");
 			return 0;
-
 		}
 		return conver;
 	}

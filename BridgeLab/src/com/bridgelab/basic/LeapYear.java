@@ -15,6 +15,7 @@ public class LeapYear {
 	 * @param year the value of year to check
 	 * @return true if it is leap year or false if its not
 	 */
+	
 	public static boolean isLeap(int year) {
 		return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 	}

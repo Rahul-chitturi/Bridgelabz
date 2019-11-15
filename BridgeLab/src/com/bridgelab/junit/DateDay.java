@@ -3,13 +3,13 @@ package com.bridgelab.junit;
 	 * 
 	 * Purpose:  to read a date from user and give the on that day as out put
      *
- * @author RAHUL CHITTURI
- * @version 10.0
- * @since 11-11-2019
+     * @author  :RAHUL CHITTURI
+     * @version :10.0
+     * @since   :11-11-2019
 	 *
 	 ******************************************************************************/
 
-import java.util.Scanner;
+
 
 import com.bridgelab.utility.Utility;;
 public class DateDay {
@@ -19,14 +19,16 @@ public class DateDay {
   *    main function to test the class
   */
 	public static void main(String[] args) {
+		try {
 		int d, m, y;
-		Scanner s = new Scanner(System.in);
 		System.out.println("enter date in day month year");
-		d = s.nextInt();
-		m = s.nextInt();
-		y = s.nextInt();
+		d = Utility.scan.nextInt();
+		m = Utility.scan.nextInt();
+		y = Utility.scan.nextInt();
 		System.out.println("day is "+Utility.dayOfWeek(d, m, y));
-		s.close();
-		
+		Utility.scan.close();
+	}catch(Exception e) {
+		System.out.println(e);
+	}
 	}
 }

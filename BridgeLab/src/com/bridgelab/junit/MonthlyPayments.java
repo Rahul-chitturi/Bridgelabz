@@ -1,26 +1,27 @@
 package com.bridgelab.junit;
-import java.util.Scanner;
 import com.bridgelab.utility.Utility;
 /******************************************************************************
- * Compilation: javac -d bin MonthlyPayment.java Execution: java -cp bin
- * com.bridgelabz.util.MonthlyPayment n
- * 
  * Purpose: to check the monthly payments for given amount ,duration and rate.
  *
-  * @author RAHUL CHITTURI
- * @version 10.0
- * @since 11-11-2019
+ * @author  RAHUL CHITTURI
+ * @version 1.0
+ * @since   11-11-2019
  *
  ******************************************************************************/
 
 public class MonthlyPayments {
+	
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+	  try {
 		System.out.println("enter principal ,year and rate");
-		double p = s.nextDouble();
-		double y = s.nextDouble();
-		double r = s.nextDouble();
-		s.close();
+		double p = Utility.scan.nextDouble();
+		double y = Utility.scan.nextDouble();
+		double r = Utility.scan.nextDouble();
+		Utility.scan.close();
 		System.out.println("mothly payment is " + Utility.monthlyPayment(p, y, r));
+	}catch(Exception e) {
+		System.out.println(e);
+	}
+		
 	}
 }

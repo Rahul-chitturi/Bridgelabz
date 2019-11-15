@@ -10,7 +10,9 @@ package com.bridgelab.junit;
       * @since 11-11-2019
 	 *
 	 ******************************************************************************/
-import java.util.Scanner;
+
+
+import com.bridgelab.utility.Utility;
 
 public class VendingMachine {
 
@@ -53,11 +55,11 @@ public class VendingMachine {
 	 */
 	public static void main(String[] args) {
 		try {
-			Scanner s = new Scanner(System.in);
+			
 			System.out.println("enter amoumt");
-			int value = s.nextInt();
+			int value = Utility.scan.nextInt();
 			notes(value);
-			s.close();
+			Utility.scan.close();
 		} catch (Exception e) {
 			System.out.println("enter value in integer");
 		}

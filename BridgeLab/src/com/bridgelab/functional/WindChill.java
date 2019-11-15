@@ -9,6 +9,8 @@ package com.bridgelab.functional;
  ******************************************************************************/
 import java.util.Scanner;
 
+import com.bridgelab.utility.Utility;
+
 public class WindChill {
 
 	/**
@@ -24,12 +26,11 @@ public class WindChill {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
 		try {
 			System.out.println("enter temperature in fahrenheit");
-			double f = s.nextDouble();
+			double f = Utility.scan.nextDouble();
 			System.out.println("enter wind speed in miles per hour");
-			double ws = s.nextDouble();
+			double ws = Utility.scan.nextDouble();
 			if (Math.abs(f) > 50 || ws > 120 || ws < 3) {
 				System.out.println("enter correct input");
 			} else {
@@ -38,6 +39,6 @@ public class WindChill {
 		} catch (Exception e) {
 			System.out.println("enter proper input");
 		}
-		s.close();
+		Utility.scan.close();
 	}
 }

@@ -1,13 +1,13 @@
 package com.bridgelab.functional;
-import java.util.Scanner;
+import com.bridgelab.utility.Utility;
 
 /******************************************************************************
  * Purpose: takes two integer command-line arguments x and y and prints the
  * Euclidean distance from the point (x, y) to the origin (0, 0)
  *
- * @author RAHUL CHITTURI
- * @version 10.0
- * @since 11-11-2019
+ * @author  :RAHUL CHITTURI
+ * @version :1.0
+ * @since   :11-11-2019
  *
  ******************************************************************************/
 public class Distance {
@@ -24,13 +24,12 @@ public class Distance {
 
 	public static void main(String[] args) {
 		try {
-			Scanner s = new Scanner(System.in);
 			System.out.println("enter value for x");
-			int x = s.nextInt();
+			int x = Utility.scan.nextInt();
 			System.out.println("enter value for y ");
-			int y = s.nextInt();
+			int y = Utility.scan.nextInt();
 			calculate(x, y);
-			s.close();
+			Utility.scan.close();
 		} catch (Exception e) {
 			System.out.println("enter integer only");
 		}

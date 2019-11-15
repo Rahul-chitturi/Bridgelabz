@@ -10,7 +10,6 @@ package com.bridgelab.junit;
 	 *
 	 ******************************************************************************/
 
-import java.util.Scanner;
 import com.bridgelab.utility.Utility;
 public class Binary {
 
@@ -75,12 +74,10 @@ public class Binary {
 	public static void main(String[] args) {
 
 		try {
-			Scanner s = new Scanner(System.in);
 			System.out.println("enter a no");
-			int[] binary = Utility.toBinary(s.nextInt());
+			int[] binary = Utility.toBinary(Utility.scan.nextInt());
 			System.out.println("binary is ");
 			showArr(binary);
-			s.close();
 			swapNibbles(binary);
 			System.out.println("after swapping ");
 			showArr(binary);
@@ -91,7 +88,7 @@ public class Binary {
 				System.out.println("its power of 2");
 			else
 				System.out.println("not power of 2");
-
+   Utility.scan.close();
 		} catch (Exception e) {
 			System.out.println("enter input as integer ");
 		}
