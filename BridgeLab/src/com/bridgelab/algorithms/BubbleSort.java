@@ -16,7 +16,7 @@ public class BubbleSort {
         int sorted[] = Utility.bubbleSort(arr);
         
         for(int i : sorted) {
-        	System.out.print(i+"  ");
+        	System.out.print(i+" ");
         }
 	}
 
