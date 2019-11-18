@@ -29,6 +29,9 @@ public void add(T data) {
 	 prev.next= node;
 	 node.next = temp;
  }
+ public void remove(T data) {
+	 
+ }
  public void disp() {
 	 Node temp = head;
 	 while(temp!= null) {
