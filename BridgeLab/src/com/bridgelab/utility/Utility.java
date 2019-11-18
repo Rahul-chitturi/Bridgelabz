@@ -12,12 +12,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Utility {
+public  class Utility <T  extends Comparable<? super T>>{
 	// resuable static object for scanner class  
 		public static Scanner scan =  new Scanner(System.in);
     //reusable static Object for PrintWriter class 
 		public static PrintWriter pw = new PrintWriter(System.out);
-		
+		/**
+		 * Function to do the merge sort using recursion 
+		 * 
+		 * @param arr array 
+		 * @param l starting of array
+		 * @param r end index of arr
+		 */
 		public static void sort(int[] arr , int l , int r) {
 			if(l<r) {
 				int m =  (l+r)/2;
@@ -29,6 +35,16 @@ public class Utility {
 			}
 		}
 		
+
+		
+		
+		/**
+		 *  Function to do merge sort using recursion
+		 * @param arr array
+		 * @param l starting point
+		 * @param m mid point 
+		 * @param r end point
+		 */
 		public static  void mergesort(int arr[] , int l ,int m ,int r) {
 			int n1 = m-l+1;
 			int n2 = r-m;
@@ -66,8 +82,29 @@ public class Utility {
 			
 		}
 		
+		/**
+		 * function to sort a array using insertion sort and generics
+		 * 
+		 * @param a
+		 */
+		public void insertionSort1(T[] a) {
+			int n = a.length ; T value = null;
+			for(int i =1 ;i<=n-1 ;i++) {
+				value =a[i];
+				int index = i;
+				while(index>0&& a[index-1].compareTo(value)>0) {
+					a[index] = a[index-1];
+					index = index-1;
+				}
+				a[index] = value;
+			}
+			}
+					
+		
+		
+		
 	/**
-	 * function  to sort a arrya using insertion sort
+	 * function  to sort a array using insertion sort
 	 * @param takes input  unsorted Integer array
 	 * @return sorted integer array
 	 */
@@ -84,6 +121,30 @@ public class Utility {
 	}
 	return a ; 
 	}
+	
+	
+	/**
+	 * Function to sort implementing bubble sort algorithm using generics
+	 * 
+	 * @param a array to sort
+	 *
+	 */
+	
+	
+	
+	public void bubblesort(T[] a) {
+	 T temp;
+	 for(int i = 0 ; i< a.length -1;i++) {
+		 for(int j = i+1; j<a.length;j++) {
+			 if(a[i].compareTo(a[j])>0) {
+				 temp = a[i];
+				 a[i] =a[j];
+				 a[j]=temp;
+			 }
+		 }
+	 }
+	}
+	
 	
 	
 	/**
@@ -485,6 +546,56 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		return binary;
 	}
 
+	public void sort(T[] arr , int l , int r) {
+	if(l<r) {
+		int m = (l+r)/2;
+		sort(arr , l ,m);
+		sort(arr , m+1, r);
+		System.out.println("fg");
+		mergesort(arr , l , m , r);
+	}
+}
+
+
+@SuppressWarnings("unchecked")
+public void mergesort(T[] arr ,  int l, int m, int r) {
+	int n1 = m-l+1;
+	int n2 = r-m;
+	T[] L = (T[]) new Comparable[n1]; 
+	T[] R = (T[]) new Comparable[n2];
+	for(int i = 0 ; i<L.length ; i++) {
+	  L[i] = arr [l+i];
+	}
+	
+	for(int j = 0 ; j<R.length ; j++) {
+		R[j] = arr[m+1+j];
+	}
+	int i = 0 ,j = 0 ;
+	int k = l;
+	while(i<n1&&j<n2) {
+		if(L[i].compareTo(R[j])<=0) {
+			arr[k] = L[i];
+			i++;
+		}
+		else {
+			arr[k]= R[j];
+			j++;
+		}
+		k++;
+	}
+	while(i<n1) {
+		arr[k] = L[i];
+		i++;
+		k++;
+	}
+	while(j<n2) {
+		arr[k] = R[j];
+		j++;
+		k++;
+	}
+	
+}
+	
 	/**
 	 * Function to convert binary to decimal
 	 *

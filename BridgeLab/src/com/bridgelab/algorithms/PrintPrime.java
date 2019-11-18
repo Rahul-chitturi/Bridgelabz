@@ -5,7 +5,7 @@ import java.io.PrintWriter;
  * @author   :Rahul C H
  * @version  :1.0
  * @date     :14-11-2019
- * @Filename :PowerOfTwo.java
+ * @Filename :PrintPrime.java
  ********************************************************************************************/
 
 import com.bridgelab.utility.Utility;

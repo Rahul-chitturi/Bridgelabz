@@ -35,7 +35,7 @@ public class Searchaword {
 	
 	public static void main(String[] args)  {
 		try {
-		File file = new File("C:\\Users\\Rahul C H\\git\\BridgeLab\\BridgeLab\\src\\search.txt");
+		File file = new File("/home/rahul/git/BridgeLabz/BridgeLab/src/search.txt");
 		String str[] = fileRead(file);
 		for(String s: str) {
 			System.out.println(s);
