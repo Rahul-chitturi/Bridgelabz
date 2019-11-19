@@ -63,7 +63,7 @@ public class Binary {
 			j++;
 		}
 		return arr;
-	}
+	}				
 
 	/**
 	 * main function/method to test Binary class

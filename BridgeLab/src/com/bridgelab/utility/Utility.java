@@ -101,7 +101,20 @@ public  class Utility <T  extends Comparable<? super T>>{
 			}
 					
 		
-		
+		public static void selectionSort(int arr[]) {
+			int size = arr.length;
+			for(int i = 0 ; i<size-1;  i++) {
+				int m = i ;
+				for(int j = i+1;j<size; j++) {
+					if(arr[j]>arr[m]) {
+						m=j;
+					}
+					int temp = arr[m];
+					arr[m] =arr[i];
+					arr[i] = temp;
+				}
+			}
+		}
 		
 	/**
 	 * function  to sort a array using insertion sort
@@ -112,7 +125,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 	int n = a.length , value = 0 , hole = 0 ; 
 	for(int i = 0 ; i<=n-1 ; i++) {
 	value = a[i];
-	hole = i;
+	hole = i; 
 	while(hole>0&&a[hole-1]>value) {
 		a[hole] = a[hole-1];
 		hole = hole -1;
@@ -135,7 +148,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 	public void bubblesort(T[] a) {
 	 T temp;
 	 for(int i = 0 ; i< a.length -1;i++) {
-		 for(int j = i+1; j<a.length;j++) {
+		 for(int j = 0; j<a.length -i-1;j++) {
 			 if(a[i].compareTo(a[j])>0) {
 				 temp = a[i];
 				 a[i] =a[j];
@@ -551,7 +564,6 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		int m = (l+r)/2;
 		sort(arr , l ,m);
 		sort(arr , m+1, r);
-		System.out.println("fg");
 		mergesort(arr , l , m , r);
 	}
 }
@@ -574,7 +586,7 @@ public void mergesort(T[] arr ,  int l, int m, int r) {
 	int k = l;
 	while(i<n1&&j<n2) {
 		if(L[i].compareTo(R[j])<=0) {
-			arr[k] = L[i];
+          arr[k] = L[i];
 			i++;
 		}
 		else {
