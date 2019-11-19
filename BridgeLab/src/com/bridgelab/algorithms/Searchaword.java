@@ -32,26 +32,26 @@ public class Searchaword {
 		s1.toArray(s);
 		return s;
 	}
-	
+
 	public static void main(String[] args)  {
 		try {
-		File file = new File("/home/rahul/git/BridgeLabz/BridgeLab/src/search.txt");
-		String str[] = fileRead(file);
-		for(String s: str) {
-			System.out.println(s);
+			File file = new File("/home/rahul/git/BridgeLabz/BridgeLab/src/search.txt");
+			String str[] = fileRead(file);
+			for(String s: str) {
+				System.out.println(s);
+			}
+			System.out.println("enter word to search");
+			String s = Utility.scan.nextLine();
+			int n  = Utility.binary(str, s);
+			if(n>0) {
+				System.out.println("found");
+			}else {
+				System.out.println("not found");
+			}
+			Utility.scan.close();
+		}catch(Exception e ) {
+			System.out.println(e);
 		}
-		System.out.println("enter word to search");
-		String s = Utility.scan.nextLine();
-		int n  = Utility.binary(str, s);
-		if(n>0) {
-			System.out.println("found");
-		}else {
-			System.out.println("not found");
-		}
-		Utility.scan.close();
-	}catch(Exception e ) {
-		System.out.println(e);
-	}
 	}
 
 }

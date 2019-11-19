@@ -1,6 +1,6 @@
 package com.bridgelab.algorithms;
 import com.bridgelab.utility.Utility;
- /********************************************************************************************
+/********************************************************************************************
  * Purpose   : to find the prime no between 0 to 1000 an if they are pallindrome or anagram or not
  * @author   :Rahul C H
  * @version  :1.0

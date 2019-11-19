@@ -1,11 +1,11 @@
 package com.bridgelab.algorithms;
 /******************************************************************************
-	 * Purpose  :Guess the number given by user and check by asking user,, imlementing binary search 
-     *
-	 * @author  :RAHUL CHITTURI
-     * @version :1.0
-     * @since   :11-11-2019
-	 ******************************************************************************/
+ * Purpose  :Guess the number given by user and check by asking user,, imlementing binary search 
+ *
+ * @author  :RAHUL CHITTURI
+ * @version :1.0
+ * @since   :11-11-2019
+ ******************************************************************************/
 
 import com.bridgelab.utility.Utility;
 
