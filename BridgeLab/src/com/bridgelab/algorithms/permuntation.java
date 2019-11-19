@@ -1,5 +1,11 @@
 package com.bridgelab.algorithms;
-
+/********************************************************************************************
+* @purpose  :Utility class for reusable codes
+* @author   :Rahul C H
+* @version  :1.0
+* @date     :14-11-2019
+* @Filename :Utility.java
+********************************************************************************************/
 import java.util.*;
 
 import com.bridgelab.utility.Utility;
