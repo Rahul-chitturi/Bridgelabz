@@ -1,11 +1,11 @@
 package com.bridgelab.algorithms;
 
 /********************************************************************************************
- * @purpose  :Utility class for reusable codes
+ * @purpose  :program to print all permutaions of string
  * @author   :Rahul C H
  * @version  :1.0
  * @date     :14-11-2019
- * @Filename :Utility.java
+ * @Filename :Permutaion.java
  ********************************************************************************************/
 import java.util.*;
 
