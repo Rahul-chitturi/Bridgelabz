@@ -1,4 +1,5 @@
 package com.bridgelab.algorithms;
+
 /********************************************************************************************
  * Purpose   :Program to search word from file and print
  * @author   :Rahul C H
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import com.bridgelab.utility.Utility;
+
 public class Searchaword {
 
 	public static String[] fileRead(File f) throws IOException {
@@ -33,23 +35,23 @@ public class Searchaword {
 		return s;
 	}
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		try {
 			File file = new File("/home/rahul/git/BridgeLabz/BridgeLab/src/search.txt");
 			String str[] = fileRead(file);
-			for(String s: str) {
+			for (String s : str) {
 				System.out.println(s);
 			}
 			System.out.println("enter word to search");
 			String s = Utility.scan.nextLine();
-			int n  = Utility.binary(str, s);
-			if(n>0) {
+			int n = Utility.binary(str, s);
+			if (n > 0) {
 				System.out.println("found");
-			}else {
+			} else {
 				System.out.println("not found");
 			}
 			Utility.scan.close();
-		}catch(Exception e ) {
+		} catch (Exception e) {
 			System.out.println(e);
 		}
 	}

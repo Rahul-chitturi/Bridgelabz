@@ -9,41 +9,41 @@ public class Userdetails {
 	private String mobileNo;
 	private String date;
 
-	//constructor
-	public Userdetails(){
-	}
-	//getter and setter methodss
-	public void setfName(String firstName){
-		this.firstName=firstName;
+	// constructor
+	public Userdetails() {
 	}
 
-	public void setlName(String lastName){
-		this.lastName=lastName;
+	// getter and setter methodss
+	public void setfName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public void setmobileNo(String mobileNo){
-		this.mobileNo=mobileNo;
+	public void setlName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public void setdate(String date){
-		this.date=date;
+	public void setmobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 
-	public String getfName(){
+	public void setdate(String date) {
+		this.date = date;
+	}
+
+	public String getfName() {
 		return firstName;
 	}
 
-	public String getlName(){
+	public String getlName() {
 		return lastName;
 	}
 
-	public String mobileNo(){
+	public String mobileNo() {
 		return mobileNo;
 	}
 
-	public String date(){
+	public String date() {
 		return date;
 	}
-
 
 }

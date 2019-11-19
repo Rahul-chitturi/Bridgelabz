@@ -1,4 +1,5 @@
 package com.bridgelab.algorithms;
+
 import java.io.PrintWriter;
 /********************************************************************************************
  * Purpose   :Program to print PrintPrime number
@@ -9,32 +10,34 @@ import java.io.PrintWriter;
  ********************************************************************************************/
 
 import com.bridgelab.utility.Utility;
+
 public class PrintPrime {
 
 	public static void main(String[] args) {
 		PrintWriter pw = new PrintWriter(System.out);
 		System.out.println("enter number in 0- 1000");
-		int n =   Utility.scan.nextInt();
-		for(int i = 2 ; i<= n ; i++) {
-			if(isPrime(i)) {
-				pw.print(i+" ");
+		int n = Utility.scan.nextInt();
+		for (int i = 2; i <= n; i++) {
+			if (isPrime(i)) {
+				pw.print(i + " ");
 				pw.flush();
 			}
 		}
 		Utility.scan.close();
 	}
+
 	/**
-	 * to find given number is prime or not 
+	 * to find given number is prime or not
 	 * 
 	 * @param n
 	 * @return true if prime or else false
 	 */
-	static boolean isPrime(int n ) {
-		for(int i  = 2 ; i<=n/2 ; i++ ) {
-			if(n%i == 0 ) {
-				return  false;
+	static boolean isPrime(int n) {
+		for (int i = 2; i <= n / 2; i++) {
+			if (n % i == 0) {
+				return false;
 			}
 		}
-		return  true;
+		return true;
 	}
 }

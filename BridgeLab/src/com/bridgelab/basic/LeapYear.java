@@ -1,4 +1,5 @@
 package com.bridgelab.basic;
+
 /********************************************************************************************
  * Purpose   :To fine the given year is leap or not 
  * @author   :Rahul C H
@@ -15,18 +16,18 @@ public class LeapYear {
 	 * @param year the value of year to check
 	 * @return true if it is leap year or false if its not
 	 */
-	
+
 	public static boolean isLeap(int year) {
 		return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 	}
 
-	   /*
-	    * The main function is written to test LeapYear  class
-	    */
+	/*
+	 * The main function is written to test LeapYear class
+	 */
 	public static void main(String[] args) {
-			try {
-				System.out.println("enter year in 4 digit");
-				int year = Utility.scan.nextInt();
+		try {
+			System.out.println("enter year in 4 digit");
+			int year = Utility.scan.nextInt();
 			/*
 			 * ensures the value is 4 digit
 			 */
@@ -37,12 +38,12 @@ public class LeapYear {
 			}
 			if (isLeap(year)) {
 				System.out.println(year + " is a leap year");
-			}else
+			} else
 				System.out.println(year + " is not a leap year");
 
-				Utility.scan.close();
-			}catch(Exception e) {
-				System.out.println(e +" Enter valid input");
-			}
-			}
-			}
+			Utility.scan.close();
+		} catch (Exception e) {
+			System.out.println(e + " Enter valid input");
+		}
+	}
+}

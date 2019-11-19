@@ -1,4 +1,5 @@
 package com.bridgelab.algorithms;
+
 /******************************************************************************
  * Purpose  :Guess the number given by user and check by asking user,, imlementing binary search 
  *
@@ -12,6 +13,7 @@ import com.bridgelab.utility.Utility;
 public class GuessGame {
 	/**
 	 * function to fine the number
+	 * 
 	 * @return low
 	 */
 	static int find() {
