@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.bridgelab.basic.LeapYear;
+import com.bridgelabz.basic.LeapYear;
 
 class LeapYearTest {
 

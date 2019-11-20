@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.bridgelab.utility.Utility;
+import com.bridgelabz.utility.Utility;
 
 class MonthlyPaymentTest {
 
