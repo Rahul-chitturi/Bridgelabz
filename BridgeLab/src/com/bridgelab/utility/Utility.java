@@ -7,159 +7,155 @@
  ********************************************************************************************/
 
 package com.bridgelab.utility;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public  class Utility <T  extends Comparable<? super T>>{
-	// resuable static object for scanner class  
-		public static Scanner scan =  new Scanner(System.in);
-    //reusable static Object for PrintWriter class 
-		public static PrintWriter pw = new PrintWriter(System.out);
-		/**
-		 * Function to do the merge sort using recursion 
-		 * 
-		 * @param arr array 
-		 * @param l starting of array
-		 * @param r end index of arr
-		 */
-		public static void sort(int[] arr , int l , int r) {
-			if(l<r) {
-				int m =  (l+r)/2;
-				sort(arr , l , m);
-				
-				sort(arr , m+1 ,r);
-				
-				mergesort(arr , l,m,r);
-			}
-		}
-		
+public class Utility<T extends Comparable<? super T>> {
+	// resuable static object for scanner class
+	public static Scanner scan = new Scanner(System.in);
+	// reusable static Object for PrintWriter class
+	public static PrintWriter pw = new PrintWriter(System.out);
 
-		
-		
-		/**
-		 *  Function to do merge sort using recursion
-		 * @param arr array
-		 * @param l starting point
-		 * @param m mid point 
-		 * @param r end point
-		 */
-		public static  void mergesort(int arr[] , int l ,int m ,int r) {
-			int n1 = m-l+1;
-			int n2 = r-m;
-			int L[] = new int[n1];
-			int R[] = new int[n2];
-			
-			for(int i =0 ;  i<n1 ; i++) {
-				L[i] = arr[l+i];	
-			}
-			for(int j = 0; j<n2 ; j++) {
-				R[j] = arr[m+1+j];
-			}
-			int i = 0 , j = 0 ;
-			int k = l;
-			while(i<n1&&j<n2) {
-				if(L[i]<=R[j]) {
-					arr[k] = L[i];
-					i++;
-				}else {
-				arr[k] = R[j];
-				j++;
-				}
-				k++;
-			}
-			while(i<n1) {
-				arr[k] = L[i];
-						i++;
-				k++;
-			}
-			while(j<n2) {
-				arr[k] = R[j];
-				j++;
-				k++;
-			}
-			
-		}
-		
-		/**
-		 * function to sort a array using insertion sort and generics
-		 * 
-		 * @param a
-		 */
-		public void insertionSort1(T[] a) {
-			int n = a.length ; T value = null;
-			for(int i =1 ;i<=n-1 ;i++) {
-				value =a[i];
-				int index = i;
-				while(index>0&& a[index-1].compareTo(value)>0) {
-					a[index] = a[index-1];
-					index = index-1;
-				}
-				a[index] = value;
-			}
-			}
-					
-		
-		public static void selectionSort(int arr[]) {
-			int size = arr.length;
-			for(int i = 0 ; i<size-1;  i++) {
-				int m = i ;
-				for(int j = i+1;j<size; j++) {
-					if(arr[j]>arr[m]) {
-						m=j;
-					}
-					int temp = arr[m];
-					arr[m] =arr[i];
-					arr[i] = temp;
-				}
-			}
-		}
-		
 	/**
-	 * function  to sort a array using insertion sort
-	 * @param takes input  unsorted Integer array
+	 * Function to do the merge sort using recursion
+	 * 
+	 * @param arr array
+	 * @param l   starting of array
+	 * @param r   end index of arr
+	 */
+	public static void sort(int[] arr, int l, int r) {
+		if (l < r) {
+			int m = (l + r) / 2;
+			sort(arr, l, m);
+
+			sort(arr, m + 1, r);
+
+			mergesort(arr, l, m, r);
+		}
+	}
+
+	/**
+	 * Function to do merge sort using recursion
+	 * 
+	 * @param arr array
+	 * @param l   starting point
+	 * @param m   mid point
+	 * @param r   end point
+	 */
+	public static void mergesort(int arr[], int l, int m, int r) {
+		int n1 = m - l + 1;
+		int n2 = r - m;
+		int L[] = new int[n1];
+		int R[] = new int[n2];
+
+		for (int i = 0; i < n1; i++) {
+			L[i] = arr[l + i];
+		}
+		for (int j = 0; j < n2; j++) {
+			R[j] = arr[m + 1 + j];
+		}
+		int i = 0, j = 0;
+		int k = l;
+		while (i < n1 && j < n2) {
+			if (L[i] <= R[j]) {
+				arr[k] = L[i];
+				i++;
+			} else {
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+		while (i < n1) {
+			arr[k] = L[i];
+			i++;
+			k++;
+		}
+		while (j < n2) {
+			arr[k] = R[j];
+			j++;
+			k++;
+		}
+
+	}
+
+	/**
+	 * function to sort a array using insertion sort and generics
+	 * 
+	 * @param a
+	 */
+	public void insertionSort1(T[] a) {
+		int n = a.length;
+		T value = null;
+		for (int i = 1; i <= n - 1; i++) {
+			value = a[i];
+			int index = i;
+			while (index > 0 && a[index - 1].compareTo(value) > 0) {
+				a[index] = a[index - 1];
+				index = index - 1;
+			}
+			a[index] = value;
+		}
+	}
+
+	public static void selectionSort(int arr[]) {
+		int size = arr.length;
+		for (int i = 0; i < size - 1; i++) {
+			int m = i;
+			for (int j = i + 1; j < size; j++) {
+				if (arr[j] > arr[m]) {
+					m = j;
+				}
+				int temp = arr[m];
+				arr[m] = arr[i];
+				arr[i] = temp;
+			}
+		}
+	}
+
+	/**
+	 * function to sort a array using insertion sort
+	 * 
+	 * @param takes input unsorted Integer array
 	 * @return sorted integer array
 	 */
 	public static int[] insertionSort(int[] a) {
-	int n = a.length , value = 0 , hole = 0 ; 
-	for(int i = 0 ; i<=n-1 ; i++) {
-	value = a[i];
-	hole = i; 
-	while(hole>0&&a[hole-1]>value) {
-		a[hole] = a[hole-1];
-		hole = hole -1;
+		int n = a.length, value = 0, hole = 0;
+		for (int i = 0; i <= n - 1; i++) {
+			value = a[i];
+			hole = i;
+			while (hole > 0 && a[hole - 1] > value) {
+				a[hole] = a[hole - 1];
+				hole = hole - 1;
+			}
+			a[hole] = value;
+		}
+		return a;
 	}
-	a[hole]=value;
-	}
-	return a ; 
-	}
-	
-	
+
 	/**
 	 * Function to sort implementing bubble sort algorithm using generics
 	 * 
 	 * @param a array to sort
 	 *
 	 */
-	
-	
-	
+
 	public void bubblesort(T[] a) {
-	 T temp;
-	 for(int i = 0 ; i< a.length -1;i++) {
-		 for(int j = 0; j<a.length -i-1;j++) {
-			 if(a[i].compareTo(a[j])>0) {
-				 temp = a[i];
-				 a[i] =a[j];
-				 a[j]=temp;
-			 }
-		 }
-	 }
+		T temp;
+		for (int i = 0; i < a.length - 1; i++) {
+			for (int j = 0; j < a.length - i - 1; j++) {
+				if (a[i].compareTo(a[j]) > 0) {
+					temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
 	}
-	
-	
-	
+
 	/**
 	 * Function to sort implementing bubble sort algorithm
 	 * 
@@ -169,7 +165,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 	public static int[] bubbleSort(int[] arr) {
 		int temp;
 		for (int i = 0; i < arr.length - 1; i++) {
-			for (int j = 0; j < arr.length-i-1; j++) {
+			for (int j = 0; j < arr.length - i - 1; j++) {
 				if (arr[i] > arr[j]) {
 					temp = arr[i];
 					arr[i] = arr[j];
@@ -199,51 +195,53 @@ public  class Utility <T  extends Comparable<? super T>>{
 			}
 		}
 	}
-	
-	
+
 	/**
-	 * FUnction to print the  integer 2DARRAY  
+	 * FUnction to print the integer 2DARRAY
+	 * 
 	 * @param n the 2Darrya
 	 */
 	public static void PrintArr(int a[][]) {
-		for(int b[] : a ) {
-			for( int  c : b) {
-				
-				pw.print(c+" ");
+		for (int b[] : a) {
+			for (int c : b) {
+
+				pw.print(c + " ");
 				pw.flush();
 			}
 			System.out.println();
 		}
 	}
-	
+
 	/**
-	 * FUnction to print the  doubles 2DARRAY  
+	 * FUnction to print the doubles 2DARRAY
+	 * 
 	 * @param n the 2Darrya
 	 */
 	public static void PrintArr(double a[][]) {
-		for(double b[] : a ) {
-			for( double  c : b) {
-				pw.print(c+" ");
+		for (double b[] : a) {
+			for (double c : b) {
+				pw.print(c + " ");
 				pw.flush();
 			}
 			System.out.println();
 		}
 	}
+
 	/**
-	 * FUnction to print the  boolean 2DARRAY  
+	 * FUnction to print the boolean 2DARRAY
+	 * 
 	 * @param n the 2Darrya
 	 */
 	public static void PrintArr(boolean a[][]) {
-		for(boolean b[] : a ) {
-			for( boolean  c : b) {
-			if(c ==  true) {
-				pw.print("1 ");
-				pw.flush();
-			}
-			else {
-				pw.print("0 ");
-				pw.flush();
-			}
+		for (boolean b[] : a) {
+			for (boolean c : b) {
+				if (c == true) {
+					pw.print("1 ");
+					pw.flush();
+				} else {
+					pw.print("0 ");
+					pw.flush();
+				}
 			}
 			System.out.println();
 		}
@@ -264,7 +262,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return c;
 	}
-	
+
 	/**
 	 * Function to count the value in given integer be place
 	 * 
@@ -281,6 +279,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return count;
 	}
+
 	/**
 	 * Function to check the two strings are anagrams or not
 	 * 
@@ -301,6 +300,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return true;
 	}
+
 	/**
 	 * Function helping prime() to check if prime is pallindrome and print it
 	 */
@@ -319,7 +319,6 @@ public  class Utility <T  extends Comparable<? super T>>{
 				System.out.print(j + " ");
 		}
 	}
-	
 
 	/**
 	 * Function to check if no is anagram or not
@@ -347,6 +346,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 			}
 		}
 	}
+
 	/**
 	 * to check the values are anagrams or not
 	 * 
@@ -364,7 +364,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Function to print the prime no between to 1 to 1000
 	 */
@@ -382,6 +382,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 				System.out.print(j + " ");
 		}
 	}
+
 	/**
 	 * function to chekc if given no is prime or not
 	 * 
@@ -396,7 +397,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Function to find the is pallindrome or not
 	 * 
@@ -416,6 +417,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 		}
 		return false;
 	}
+
 	/**
 	 * Function to check the day of the week of given date
 	 *
@@ -424,7 +426,7 @@ public  class Utility <T  extends Comparable<? super T>>{
 	 * @param y int value for year
 	 * @return day of week from 1 to 7
 	 */
-public 	static int dayOfWeek(int d, int m, int y) {
+	public static int dayOfWeek(int d, int m, int y) {
 		int y0 = y - (14 - m) / 12;
 		int x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
 		int m0 = m + 12 * ((14 - m) / 12) - 2;
@@ -439,7 +441,7 @@ public 	static int dayOfWeek(int d, int m, int y) {
 	 * @param t   the character ie c or f for given temp to convert
 	 * @return converted temperature
 	 */
-	
+
 	public static int temperaturConversion(int tem, char t) {
 		int conver;
 		if (t == 'c' || t == 'C') {
@@ -452,47 +454,48 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		}
 		return conver;
 	}
-	
 
-	public static int binary(int[]arr , int n) {
-	   int high = arr.length-1  , low = 0 , mid ; 
-	   Arrays.sort(arr);
-	   while(low<=high) {
-		   mid = (high+low)/2;
-		   if(n==arr[mid]) {
-			   return mid;
-		   }else if(arr[mid]<n) {
-			   low = mid+1;
-		   }else {
-			   high = mid -1;
-		   }
-	   }
-		return -1;
-	}
-	
-/**
- * to search a word using binary
- * @param arr
- * @param s word which is to be searched 
- * @return integer index 
- */
-	public static int binary(String[] arr ,String s) {
-		int high = arr.length-1 , low = 0 , mid;
+	public static int binary(int[] arr, int n) {
+		int high = arr.length - 1, low = 0, mid;
 		Arrays.sort(arr);
-		
-		while(low<=high) {
-			mid =(high+low)/2;
-			if(s.equalsIgnoreCase(arr[mid])) {
+		while (low <= high) {
+			mid = (high + low) / 2;
+			if (n == arr[mid]) {
 				return mid;
-			}else if(arr[mid].compareToIgnoreCase(s)<0) {
-				low = mid+1;
-			}else {
-				high = mid-1;
+			} else if (arr[mid] < n) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
 			}
 		}
-		
 		return -1;
 	}
+
+	/**
+	 * to search a word using binary
+	 * 
+	 * @param arr
+	 * @param s   word which is to be searched
+	 * @return integer index
+	 */
+	public static int binary(String[] arr, String s) {
+		int high = arr.length - 1, low = 0, mid;
+		Arrays.sort(arr);
+
+		while (low <= high) {
+			mid = (high + low) / 2;
+			if (s.equalsIgnoreCase(arr[mid])) {
+				return mid;
+			} else if (arr[mid].compareToIgnoreCase(s) < 0) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+
+		return -1;
+	}
+
 	/**
 	 * to calculate monthly payment for r interest and p principal for y years
 	 *
@@ -501,7 +504,7 @@ public 	static int dayOfWeek(int d, int m, int y) {
 	 * @param r the rate at which p is given
 	 * @return monthly payment
 	 */
- public	static double monthlyPayment(double p, double y, double r) {
+	public static double monthlyPayment(double p, double y, double r) {
 		double n = 12 * y;
 		double r0 = r / (12 * 100);
 		double payment = p * r0 / (1 - Math.pow((1 + r0), -n));
@@ -514,7 +517,7 @@ public 	static int dayOfWeek(int d, int m, int y) {
 	 * @param c the value to find square root of
 	 * @return return the square root
 	 */
- public	static double sqrt(double c) {
+	public static double sqrt(double c) {
 
 		double t = c;
 		double epsilon = 1e-15;
@@ -559,55 +562,53 @@ public 	static int dayOfWeek(int d, int m, int y) {
 		return binary;
 	}
 
-	public void sort(T[] arr , int l , int r) {
-	if(l<r) {
-		int m = (l+r)/2;
-		sort(arr , l ,m);
-		sort(arr , m+1, r);
-		mergesort(arr , l , m , r);
+	public void sort(T[] arr, int l, int r) {
+		if (l < r) {
+			int m = (l + r) / 2;
+			sort(arr, l, m);
+			sort(arr, m + 1, r);
+			mergesort(arr, l, m, r);
+		}
 	}
-}
 
+	@SuppressWarnings("unchecked")
+	public void mergesort(T[] arr, int l, int m, int r) {
+		int n1 = m - l + 1;
+		int n2 = r - m;
+		T[] L = (T[]) new Comparable[n1];
+		T[] R = (T[]) new Comparable[n2];
+		for (int i = 0; i < L.length; i++) {
+			L[i] = arr[l + i];
+		}
 
-@SuppressWarnings("unchecked")
-public void mergesort(T[] arr ,  int l, int m, int r) {
-	int n1 = m-l+1;
-	int n2 = r-m;
-	T[] L = (T[]) new Comparable[n1]; 
-	T[] R = (T[]) new Comparable[n2];
-	for(int i = 0 ; i<L.length ; i++) {
-	  L[i] = arr [l+i];
-	}
-	
-	for(int j = 0 ; j<R.length ; j++) {
-		R[j] = arr[m+1+j];
-	}
-	int i = 0 ,j = 0 ;
-	int k = l;
-	while(i<n1&&j<n2) {
-		if(L[i].compareTo(R[j])<=0) {
-          arr[k] = L[i];
+		for (int j = 0; j < R.length; j++) {
+			R[j] = arr[m + 1 + j];
+		}
+		int i = 0, j = 0;
+		int k = l;
+		while (i < n1 && j < n2) {
+			if (L[i].compareTo(R[j]) <= 0) {
+				arr[k] = L[i];
+				i++;
+			} else {
+				arr[k] = R[j];
+				j++;
+			}
+			k++;
+		}
+		while (i < n1) {
+			arr[k] = L[i];
 			i++;
+			k++;
 		}
-		else {
-			arr[k]= R[j];
+		while (j < n2) {
+			arr[k] = R[j];
 			j++;
+			k++;
 		}
-		k++;
+
 	}
-	while(i<n1) {
-		arr[k] = L[i];
-		i++;
-		k++;
-	}
-	while(j<n2) {
-		arr[k] = R[j];
-		j++;
-		k++;
-	}
-	
-}
-	
+
 	/**
 	 * Function to convert binary to decimal
 	 *
@@ -616,7 +617,7 @@ public void mergesort(T[] arr ,  int l, int m, int r) {
 	 */
 	public static int toDecimal(int[] binary) {
 		int dec = 0, j = 0;
-		for (int i = binary.length - 1; i>= 0; i--) {
+		for (int i = binary.length - 1; i >= 0; i--) {
 			if (binary[i] == 1) {
 				dec = dec + (int) Math.pow(2, j);
 			}
@@ -624,5 +625,5 @@ public void mergesort(T[] arr ,  int l, int m, int r) {
 		}
 		return dec;
 	}
-	
+
 }
