@@ -152,8 +152,7 @@ public boolean search(T item) {
 				n = n.next;
 				index++;
 			}
-			prev.next = n.next;
-		
+			
 			return (T) n.data;
 		}
 	}
