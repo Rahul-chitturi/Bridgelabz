@@ -1,9 +1,5 @@
 package com.bridgelabz.datastructure.base;
 
-/**
- * @author Rahul C H
- *
- */
 public class OrderdList<T extends Comparable<T>> {
  Node head ; 
 Node tail;
@@ -28,7 +24,7 @@ public void add(T data) {
 				tail = temp;
 				return;
 			}
-	 Node prev =  null; 
+	    Node prev =  null; 
 		while (data.compareTo((T) n.data) > 0 && n.next != null) {
 			prev = n;
 			n = n.next;
@@ -76,6 +72,9 @@ public void add(T data) {
  
 public boolean search(T item) {
 		Node n = head;
+		if(head.data.equals(item)) {
+			return true;
+		}
 		while (n != null) {
 			if (n.data.equals(item)) {
 				return true;
@@ -84,6 +83,20 @@ public boolean search(T item) {
 		}
 		return false;
 	}
+
+public int size() {
+	if(head == null) {
+		return 0;
+	}
+	Node temp =  head;
+	int count = 0 ; 
+	 while(temp.next!=null) {
+		 count++;
+		temp= temp.next;
+	 }
+	 return count;
+}
+
 
 	/**
 	 * function to check if the list is empty or not
@@ -143,6 +156,9 @@ public boolean search(T item) {
 		int index = 0;
 		Node prev = null;
 		Node n = head;
+		if(head== null) {
+			return null;
+		}
 		if (pos == 0) {
 			head = head.next;
 			return (T) n.data;
@@ -152,20 +168,12 @@ public boolean search(T item) {
 				n = n.next;
 				index++;
 			}
-			
+			prev.next = n.next;
+		
 			return (T) n.data;
 		}
 	}
  
- public static void main(String[] args) {
-	 OrderdList<Integer> or =new OrderdList<Integer>();
-	 or.add(78);
-or.add(43);
-or.add(65);
-or.remove(43);
-or.add(95);
-or.add(105);
-	or.disp();
- }
+
  
 }

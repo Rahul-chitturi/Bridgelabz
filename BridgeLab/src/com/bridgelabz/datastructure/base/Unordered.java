@@ -1,13 +1,28 @@
 package com.bridgelabz.datastructure.base;
-
+/********************************************************************************************
+ * Purpose   :Unordered list reusable code with many methods 
+ * @author   :Rahul C H
+ * @version  :1.0
+ * @date     :21-11-2019
+ * @Filename :Unordered.java
+ ********************************************************************************************/
 public class Unordered<T> {
 
 private	Node head;
 
-
+/**
+ * creates a empty list 
+ * @param it need nothing\
+ * @return it return nothing (void)
+ */
 	public void list() {
 		head = null;
 	}
+	/**
+	 * @Purpose adds a new item to the list 
+	 * @param it need the item
+	 * @return it return nothing (void)
+	 */
 	public void add(T data) {
 		Node  node = new Node(data);
 		if(head ==  null) {
@@ -28,6 +43,12 @@ private	Node head;
 		}
 		return false;
 	}
+	
+	/**
+	 * @purpose removes the item form the list 
+	 * @param it need the item 
+	 */
+	
 	public void remove(T item) {
 		Node n = head;
 		Node prev = null;

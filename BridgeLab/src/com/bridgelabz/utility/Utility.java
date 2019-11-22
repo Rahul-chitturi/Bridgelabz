@@ -21,6 +21,11 @@ public class Utility<T extends Comparable<? super T>> {
 	// reusable static Object for PrintWriter class
 	public static PrintWriter pw = new PrintWriter(System.out);
 
+	public static int scanInt()
+	{
+		return scan.nextInt();
+	}
+	
 	/**
 	 * Function to do the merge sort using recursion
 	 * 
