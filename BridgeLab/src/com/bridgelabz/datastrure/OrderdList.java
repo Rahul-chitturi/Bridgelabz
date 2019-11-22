@@ -16,6 +16,7 @@ public void add(T data) {
 		 head.next=tail;
 		 tail = head;
 		 
+		 
 	 }else if(data.compareTo((T) head.data)<0) {
 		 temp.next = head;
 		 head = temp;
