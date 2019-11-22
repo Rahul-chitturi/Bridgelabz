@@ -1,7 +1,6 @@
 package com.bridgelabz.basic;
 
 import com.bridgelabz.utility.Utility;
-
 public class LeapYear {
 	/**
 	 * Function to check if year is leap year or not
@@ -14,7 +13,7 @@ public class LeapYear {
 		return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 	}
 
-	/*
+	/*   
 	 * The main function is written to test LeapYear class
 	 */
 	public static void main(String[] args) {
@@ -34,7 +33,7 @@ public class LeapYear {
 			} else
 				System.out.println(year + " is not a leap year");
 
-			Utility.scan.close();
+			Utility.scan.close();  
 		} catch (Exception e) {
 			System.out.println(e + " Enter valid input");
 		}

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+
 public class Utility<T extends Comparable<? super T>> {
 	// resuable static object for scanner class
 	public static Scanner scan = new Scanner(System.in);
@@ -36,7 +38,9 @@ public class Utility<T extends Comparable<? super T>> {
 			mergesort(arr, l, m, r);
 		}
 	}
+ 
 
+	
 	/**
 	 * Function to do merge sort using recursion
 	 * 
