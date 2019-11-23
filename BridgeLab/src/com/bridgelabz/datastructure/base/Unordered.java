@@ -169,5 +169,10 @@ private	Node head;
 		}
 	}
 
-
+//public static void main(String[] args) {
+//	Unordered t = new Unordered();
+//	t.insertAt(0,43);
+//	t.disp();
+//}
+	
 }

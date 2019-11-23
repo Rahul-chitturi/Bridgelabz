@@ -22,7 +22,7 @@ public class UnorderedListFile {
 		Scanner scan =  new Scanner(System.in);
 		try {
 			@SuppressWarnings("resource")
-			FileReader file = new FileReader("/home/rahul/git/BridgeLabz/BridgeLab/src/Unorder.txt");
+			FileReader file = new FileReader("/home/rahul/git/BridgeLabZ/BridgeLab/src/Unorder.txt");
 			
 			int i = 0;
 			String sb = "";
@@ -47,7 +47,7 @@ public class UnorderedListFile {
 		}
 		un.disp();
 		int size = un.size();
-		FileWriter filee = new FileWriter("/home/rahul/git/BridgeLabz/BridgeLab/src/Unorder.txt");
+		FileWriter filee = new FileWriter("/home/rahul/git/BridgeLabZ/BridgeLab/src/Unorder.txt");
 	for(int h= 0 ; h<=size -1; h++) {
 		filee.write(un.pop(0)+" ");
 	}

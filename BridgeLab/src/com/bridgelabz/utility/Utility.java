@@ -23,8 +23,90 @@ public class Utility<T extends Comparable<? super T>> {
 
 	public static int scanInt()
 	{
+		try {
 		return scan.nextInt();
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return 0;
 	}
+	
+	public static String ScanString() {
+		try {
+			return scan.nextLine();
+		}catch(Exception e) {
+			System.out.println();
+		}
+		return null;
+	}
+	
+	public static String inputString()
+	{
+		try {
+			return scan.next();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+
+	/*
+	 * returns InputStringLine
+	 */
+	public static String inputStringLine()
+	{
+		try {
+			return scan.nextLine();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return "";
+	}
+
+	/*
+	 *  returns InputInteger
+	 */
+	public static int inputInteger()
+	{
+		try {
+			return scan.nextInt();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0;
+	}
+
+	/*
+	 *  returns InputDouble
+	 */
+	public static double inputDouble()
+	{
+		try {
+			return scan.nextDouble();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0.0;
+	}
+
+	/*
+	 *  returns InputBoolean
+	 */
+	public static boolean inputBoolean()
+	{
+		try {
+			return scan.nextBoolean();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
+	
 	
 	/**
 	 * Function to do the merge sort using recursion
@@ -399,8 +481,8 @@ public class Utility<T extends Comparable<? super T>> {
 	 * @return true if prime false if not
 	 */
 	public static boolean isPrime(int n) {
-		for (int i = 2; i < n / 2; i++) {
-			if (n % i == 0) {
+		for (int i = 2; i <= n / 2; i++) {
+			if (n % i== 0) {
 				return false;
 			}
 		}
