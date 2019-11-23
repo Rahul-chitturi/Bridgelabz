@@ -126,6 +126,9 @@ public class Utility<T extends Comparable<? super T>> {
 		}
 	}
  
+	public static boolean isLeap(int year) {
+		return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+	}
 
 	
 	/**
@@ -608,6 +611,7 @@ public class Utility<T extends Comparable<? super T>> {
 	 * @param c the value to find square root of
 	 * @return return the square root
 	 */
+	
 	public static double sqrt(double c) {
 
 		double t = c;
@@ -624,7 +628,9 @@ public class Utility<T extends Comparable<? super T>> {
 	 *
 	 * @param d integer value to convert
 	 * @return return integer array with binary digits
+	 *
 	 */
+	
 	public static int[] toBinary(int d) {
 
 		String bin = "";
