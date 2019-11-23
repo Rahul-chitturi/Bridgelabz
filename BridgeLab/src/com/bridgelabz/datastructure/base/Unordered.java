@@ -10,6 +10,7 @@ public class Unordered<T> {
 
 private	Node head;
 
+
 /**
  * creates a empty list 
  * @param it need nothing\
@@ -159,6 +160,17 @@ private	Node head;
 		prev.next = n.next;
 		
 		return (T) n.data;
+	}
+	
+	public T get(int index) {
+		Node temp =head;
+		Node prev = null;
+		T data = null;
+	for(int i = 0 ; i<=index;i++) {
+		prev = temp;
+		temp = temp.next;
+	}
+	return (T) prev.data;
 	}
 	
 	public void disp() {

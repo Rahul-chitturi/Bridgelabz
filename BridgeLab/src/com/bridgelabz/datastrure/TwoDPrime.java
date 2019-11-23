@@ -29,6 +29,7 @@ public class TwoDPrime {
 		}
 	
 		for (int i[] : prime) {
+			
 			for (int j : i) {
 				if(j!=-1&& j!=1)
 				{

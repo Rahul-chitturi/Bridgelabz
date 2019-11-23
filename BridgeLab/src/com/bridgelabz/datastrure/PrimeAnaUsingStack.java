@@ -1,15 +1,13 @@
 package com.bridgelabz.datastrure;
-
-import java.util.ArrayList;
-
 import com.bridgelabz.datastructure.base.Stack;
+import com.bridgelabz.datastructure.base.Unordered;
 import com.bridgelabz.utility.Utility;
 
 public class PrimeAnaUsingStack {
 
 	public static void main(String[] args) {
 		Stack<Integer> stack = new Stack<Integer>();
-			ArrayList<Integer> ar = new ArrayList<Integer>();
+	Unordered<Integer> ar = new Unordered<Integer>();
 			boolean b;
 			for (int j = 2; j <= 1000; j++) {
 				b = true;
@@ -25,10 +23,13 @@ public class PrimeAnaUsingStack {
 			for (int i = 0; i < ar.size(); i++) {
 				for (int j = i + 1; j < ar.size(); j++) {
 					if (Utility.anagram(ar.get(i), ar.get(j))) {
-						System.out.println(ar.get(i) + "  " + ar.get(j));
+						stack.push(ar.get(i));
+						stack.push(ar.get(j));
 					}
 				}
 			}
+			
+			stack.disp();
 		}
 
 	}

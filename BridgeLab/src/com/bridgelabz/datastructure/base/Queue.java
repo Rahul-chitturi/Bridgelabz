@@ -41,6 +41,20 @@ Node tail;
 		}
 	}
 	 
+	public void dispPrime() {
+		int count = 0 ; 
+		Node temp = head;
+		while(temp!=null) {
+			if(count%2==0) {
+				System.out.println();
+			}
+			System.out.print(temp.data+" ");
+		temp = temp.next;
+		count++;
+		
+		}
+	}
+	
 	@SuppressWarnings("unchecked")
 	public T dequeue() {
 		Node temp = head;

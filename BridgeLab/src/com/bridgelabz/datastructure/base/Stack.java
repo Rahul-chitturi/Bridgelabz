@@ -82,4 +82,16 @@ public int size() {
 	}
 	return count; 
 }
+public void disp() {
+	Node temp = head;
+	int count = 0  ; 
+	while(temp!=null) {
+		if(count%2 == 0 ) {
+			System.out.println();
+		}
+		System.out.print(temp.data+" ");
+		temp = temp.next;
+		count++;
+	}
+}
 }
