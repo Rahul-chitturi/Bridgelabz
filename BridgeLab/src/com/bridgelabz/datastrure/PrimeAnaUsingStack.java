@@ -1,4 +1,11 @@
 package com.bridgelabz.datastrure;
+/********************************************************************************************
+ * Purpose :PrimeAnagramUsingstack
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:PrimeAnagramUsingstack.java
+ ********************************************************************************************/
 import com.bridgelabz.datastructure.base.Stack;
 import com.bridgelabz.datastructure.base.Unordered;
 import com.bridgelabz.utility.Utility;

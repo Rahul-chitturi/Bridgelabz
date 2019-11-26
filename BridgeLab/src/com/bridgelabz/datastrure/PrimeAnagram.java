@@ -1,6 +1,12 @@
 package com.bridgelabz.datastrure;
 
-
+/********************************************************************************************
+ * Purpose :Prime anagram
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:PrimeAnagrams.java
+ ********************************************************************************************/
 
 import com.bridgelabz.utility.Utility;
 

@@ -1,7 +1,13 @@
 package com.bridgelabz.datastrure;
 
 import com.bridgelabz.utility.Utility;
-
+/********************************************************************************************
+ * Purpose :storing the primie number in 2d array
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:TwoDarray.java
+ ********************************************************************************************/
 public class TwoDPrime {
 
 	public static void main(String[] args) {

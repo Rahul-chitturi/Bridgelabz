@@ -1,45 +1,70 @@
 package com.bridgelabz.datastructure.base;
 
+/********************************************************************************************
+ * Purpose :ordered list reusable code with many methods
+ * 
+ * @author :Rahul C H
+ * @version :1.0
+ * @date :21-11-2019
+ * @Filename :Ordered.java
+ ********************************************************************************************/
 public class OrderdList<T extends Comparable<T>> {
- Node head ; 
-Node tail;
- @SuppressWarnings("unchecked")
-public void add(T data) {
-	 Node n = head; 
-	 Node temp = new Node(data);
-	 if(head == null) {
-		 head  = temp;
-		 head.next=tail;
-		 tail = head;
-		 
-		 
-	 }else if(data.compareTo((T) head.data)<0) {
-		 temp.next = head;
-		 head = temp;
-		
-	 }
-	 else {
-		 if (data.compareTo((T) tail.data) > 0) {
+	Node<T> head;
+	Node<T> tail;
+
+	/**
+	 * creates a empty list
+	 * 
+	 * @param it need nothing
+	 * @return it return nothing (void)
+	 */
+	public OrderdList() {
+		head = null;
+	}
+
+	/**
+	 * @Purpose adds a new item to the list
+	 * @param it need the item
+	 * @return it return nothing (void)
+	 */
+
+	public void add(T data) {
+		Node<T> n = head;
+		Node<T> temp = new Node<T>(data);
+		if (head == null) {
+			head = temp;
+			head.next = tail;
+			tail = head;
+		} else if (data.compareTo((T) head.data) < 0) {
+			temp.next = head;
+			head = temp;
+		} else {
+			if (data.compareTo((T) tail.data) > 0) {
 				tail.next = temp;
 				tail = temp;
 				return;
 			}
-	    Node prev =  null; 
-		while (data.compareTo((T) n.data) > 0 && n.next != null) {
-			prev = n;
-			n = n.next;
+			Node<T> prev = null;
+			while (data.compareTo((T) n.data) > 0 && n.next != null) {
+				prev = n;
+				n = n.next;
+			}
+			prev.next = temp;
+			temp.next = n;
 		}
-		prev.next = temp;
-		temp.next = n;
- }
- }
+	}
 
- public void remove(T item) {
-		Node n = head;
-		Node prev = null;
+	/**
+	 * @purpose : removes the item form the list
+	 * @param : it need the item
+	 * @return : it will return nothing
+	 */
+
+	public void remove(T item) {
+		Node<T> n = head;
+		Node<T> prev = null;
 		if (head.data.equals(item)) {
 			head = head.next;
-
 			return;
 		} else if (tail.data.equals(item)) {
 			while (!n.next.data.equals(tail.data)) {
@@ -56,23 +81,34 @@ public void add(T data) {
 			n = n.next;
 			prev.next = n;
 			n = null;
-		
+
 		}
 	}
 
- 
- public void disp() {
-	 Node temp = head;
-	 while(temp!= null) {
-		 System.out.println(temp.data);
-		 temp = temp.next;
-	
-	 }
- }
- 
-public boolean search(T item) {
-		Node n = head;
-		if(head.data.equals(item)) {
+	/**
+	 * @purpose :to display the Ordered list
+	 * @param :it needs nothing
+	 * @return :returns nothing (void)
+	 */
+
+	public void disp() {
+		Node<T> temp = head;
+		while (temp != null) {
+			System.out.print(temp.data + " ");
+			temp = temp.next;
+
+		}
+	}
+
+	/**
+	 * @purpose :it will search for the item and returns boolean
+	 * @param :it needs item to search
+	 * @return :it will return a boolean
+	 */
+
+	public boolean search(T item) {
+		Node<T> n = head;
+		if (head.data.equals(item)) {
 			return true;
 		}
 		while (n != null) {
@@ -84,19 +120,23 @@ public boolean search(T item) {
 		return false;
 	}
 
-public int size() {
-	if(head == null) {
-		return 0;
+	/**
+	 * @purpose : checks the size of the list
+	 * @param : it needs nothing
+	 * @return : it returns INTEGER to show size
+	 */
+	public int size() {
+		if (head == null) {
+			return 0;
+		}
+		Node<T> temp = head;
+		int count = 0;
+		while (temp.next != null) {
+			count++;
+			temp = temp.next;
+		}
+		return count;
 	}
-	Node temp =  head;
-	int count = 0 ; 
-	 while(temp.next!=null) {
-		 count++;
-		temp= temp.next;
-	 }
-	 return count;
-}
-
 
 	/**
 	 * function to check if the list is empty or not
@@ -109,7 +149,7 @@ public int size() {
 		}
 		return false;
 	}
-	
+
 	/**
 	 * Function to return the index of the item assuming it is present
 	 * 
@@ -118,7 +158,7 @@ public int size() {
 	 */
 	public int index(T item) {
 		int index = 0;
-		Node n = head;
+		Node<T> n = head;
 		while (!n.data.equals(item)) {
 			n = n.next;
 			index++;
@@ -132,17 +172,17 @@ public int size() {
 	 * 
 	 * @return the last element of list after removing
 	 */
-	@SuppressWarnings("unchecked")
+
 	public T pop() {
-		Node n = head;
-		Node prev = null;
+		Node<T> n = head;
+		Node<T> prev = null;
 		while (n.next != null) {
 			prev = n;
 			n = n.next;
 		}
 		prev.next = null;
 		tail = prev;
-			return (T) n.data;
+		return (T) n.data;
 	}
 
 	/**
@@ -151,12 +191,11 @@ public int size() {
 	 * @param pos the index at which the item to return
 	 * @return the element at the given index after removing it
 	 */
-	@SuppressWarnings("unchecked")
 	public T pop(int pos) {
 		int index = 0;
-		Node prev = null;
-		Node n = head;
-		if(head== null) {
+		Node<T> prev = null;
+		Node<T> n = head;
+		if (head == null) {
 			return null;
 		}
 		if (pos == 0) {
@@ -169,11 +208,9 @@ public int size() {
 				index++;
 			}
 			prev.next = n.next;
-		
+
 			return (T) n.data;
 		}
 	}
- 
 
- 
 }

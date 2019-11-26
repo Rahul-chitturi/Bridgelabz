@@ -1,5 +1,11 @@
 package com.bridgelabz.datastrure;
-
+/********************************************************************************************
+ * Purpose :primeanagram using queue
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:PrimeAnagramUsingQueue.java
+ ********************************************************************************************/
 import com.bridgelabz.datastructure.base.Queue;
 import com.bridgelabz.datastructure.base.Unordered;
 import com.bridgelabz.utility.Utility;

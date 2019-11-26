@@ -1,5 +1,11 @@
 package com.bridgelabz.datastrure;
-
+/********************************************************************************************
+ * Purpose :banking cah counter
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:BankingCash.java
+ ********************************************************************************************/
 import com.bridgelabz.datastructure.base.Queue;
 import com.bridgelabz.utility.Utility;
 

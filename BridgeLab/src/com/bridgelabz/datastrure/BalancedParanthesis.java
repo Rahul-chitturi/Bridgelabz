@@ -1,5 +1,11 @@
 package com.bridgelabz.datastrure;
-
+/********************************************************************************************
+ * Purpose : using stack to find the parentheses balanced or not  
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:Balamcedparanthesis.java
+ ********************************************************************************************/
 import com.bridgelabz.datastructure.base.Stack;
 import com.bridgelabz.utility.Utility;
 

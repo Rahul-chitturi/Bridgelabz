@@ -1,4 +1,11 @@
 package com.bridgelabz.datastrure;
+/********************************************************************************************
+ * Purpose : reading a file and searching the word
+ * @author :Rahul C H
+ * @version:1.0
+ * @date   :21-11-2019
+ * @Filename:OrderedListMain.java
+ ********************************************************************************************/
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;

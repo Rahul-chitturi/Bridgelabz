@@ -1,9 +1,16 @@
 package com.bridgelabz.datastructure.base;
+/******************************************************************************
+ * @purpose: program to create a stack of abstract data type
+ * @author :RAHUL CHITTURI
+ * @version:1.0
+ * @since  :11-11-2019
+ * @fileName :Stack.java
+ ******************************************************************************/
 
 public class Stack<T extends Comparable<T>>{
-Node head ;
+Node<T> head ;
 /**
- * 
+ * creates a empty stack
  */
 public  Stack() {
 	head = null;
@@ -14,8 +21,8 @@ public  Stack() {
  * @param item it needs a item
  * @return it returns nothing 
  */
-public void push(T item) {
-	Node node =new Node(item);
+public void push(T item) { 
+	Node<T> node =new Node<T>(item);
 	node.next =head;
 	head = node;
 }
@@ -24,7 +31,7 @@ public void push(T item) {
  * @param  it needs nothing 
  * @return returns the top item
  */
-@SuppressWarnings("unchecked")
+
 public T pop() {
 	T data = null;
 	if(head == null) {
@@ -45,7 +52,7 @@ public T pop() {
  * @return it return top item from stack
  */
 	
-@SuppressWarnings("unchecked")
+
 public  T peek() {
 	T data =  null;
 	if( head  ==  null) {
@@ -54,7 +61,6 @@ public  T peek() {
 	}
 	else {
 		data = (T) head.data;
-		
 	}
 	return data;
 }
@@ -74,7 +80,7 @@ return head==null?true:false;
  * @return it returns INTEGER to  show size
  */
 public int size() {
-	Node temp = head;
+	Node<T> temp = head;
 	int count= 0 ;
 	while(temp.next!=null) {
 		count++;
@@ -82,8 +88,15 @@ public int size() {
 	}
 	return count; 
 }
+
+/**
+ * @purpose :to display the stack
+ * @param   :it needs nothing
+ * @return  :returns nothing (void)
+ */
+
 public void disp() {
-	Node temp = head;
+	Node<T> temp = head;
 	int count = 0  ; 
 	while(temp!=null) {
 		if(count%2 == 0 ) {
