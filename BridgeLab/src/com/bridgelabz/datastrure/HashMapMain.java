@@ -1,10 +1,10 @@
 package com.bridgelabz.datastrure;
 /********************************************************************************************
- * Purpose :banking cah counter
+ * Purpose :Hashing function
  * @author :Rahul C H
  * @version:1.0
  * @date   :21-11-2019
- * @Filename:BankingCash.java
+ * @Filename:HashingMapMain.java
  ********************************************************************************************/
 import java.io.FileReader;
 import com.bridgelabz.datastructure.base.HashMap;

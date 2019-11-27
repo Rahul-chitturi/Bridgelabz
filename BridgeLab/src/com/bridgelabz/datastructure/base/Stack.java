@@ -10,7 +10,7 @@ package com.bridgelabz.datastructure.base;
 public class Stack<T extends Comparable<T>>{
 Node<T> head ;
 /**
- * creates a empty stack
+ * creates a empty stacks
  */
 public  Stack() {
 	head = null;
@@ -83,7 +83,7 @@ public int size() {
 	int count= 0 ;
 	while(temp.next!=null) {
 		count++;
-		temp = temp.next;
+		temp = temp.next;  
 	}
 	return count; 
 }
