@@ -41,7 +41,6 @@ public T pop() {
 	else {
 		data = (T) head.data;
 		head = head.next;
-		
 	}
 	return data;
 }
