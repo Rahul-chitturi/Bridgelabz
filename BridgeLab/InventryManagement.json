@@ -1,0 +1,16 @@
+[
+	{
+		"Inventory": {
+			"PricePerKg": 60.0,
+			"Weight": 50,
+			"Name": "wheat"
+		}
+	},
+	{
+		"Inventory": {
+			"PricePerKg": 70.0,
+			"Weight": 60,
+			"Name": "pulses"
+		}
+	}
+]

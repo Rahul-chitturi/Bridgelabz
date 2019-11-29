@@ -21,6 +21,18 @@ public class Utility<T extends Comparable<? super T>> {
 	// reusable static Object for PrintWriter class
 	public static PrintWriter pw = new PrintWriter(System.out);
 
+	/*
+	 * Inventory Management
+	 */
+	public static boolean checkChoice(int choice) {
+		if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5 || choice == 6
+				|| choice == 7) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
 	public static int scanInt()
 	{
 		try {
