@@ -21,13 +21,13 @@ public class InventryImplementation implements InventryInterface {
 	public void addInventory() {
 		try {
 			Inventry inventory = new Inventry();
-			FileReader reader = new FileReader("/home/rahul/git/BridgeLabZ/BridgeLab/InventryManagement.json");
+			FileReader reader = new FileReader("/home/user/git/BridgeLabZ/BridgeLab/InventryManagement.json");
 			JSONParser ne = new JSONParser();
 			Object obj = ne.parse(reader);
 
 			JSONArray arr = (JSONArray) obj;
 
-			FileWriter file = new FileWriter("/home/rahul/git/BridgeLabZ/BridgeLab/InventryManagement.json");
+			FileWriter file = new FileWriter("/home/user/git/BridgeLabZ/BridgeLab/InventryManagement.json");
 
 			JSONObject objOne = new JSONObject();
 
@@ -69,7 +69,7 @@ public class InventryImplementation implements InventryInterface {
 	}
 
 	private static JSONArray readFile() {
-		try (FileReader reader = new FileReader("/home/rahul/git/BridgeLabZ/BridgeLab/InventryManagement.json")) {
+		try (FileReader reader = new FileReader("/home/user/eclipse-workspace/BridgeLabz/BridgeLab/src/com/bridgelabz/objectoriented/inventerymanagement/Service/service_implementation/InventryManagement.json")) {
 			JSONParser ne = new JSONParser();
 			Object obj = ne.parse(reader);
 			JSONArray arr = (JSONArray) obj;
@@ -130,7 +130,7 @@ public class InventryImplementation implements InventryInterface {
 			System.out.println("Enter the name to be remove");
 			String userInputName = Utility.inputString();
 			boolean result = true;
-			FileReader reader = new FileReader("/home/rahul/git/BridgeLabZ/BridgeLab/InventryManagement.json");
+			FileReader reader = new FileReader("/home/user/git/BridgeLabZ/BridgeLab/InventryManagement.json");
 			JSONParser ne = new JSONParser();
 			JSONArray stored = (JSONArray) ne.parse(reader);
 			for (int i = 0; i < stored.size(); i++) {
@@ -148,7 +148,7 @@ public class InventryImplementation implements InventryInterface {
 			} else {
 				System.out.println("Succusefull.....");
 			}
-			try (FileWriter file = new FileWriter("/home/rahul/git/BridgeLabZ/BridgeLab/InventryManagement.json")) {
+			try (FileWriter file = new FileWriter("/home/user/git/BridgeLabZ/BridgeLab/InventryManagement.json")) {
 				file.write(stored.toJSONString());
 				file.flush();
 			}
