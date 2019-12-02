@@ -734,5 +734,23 @@ public class Utility<T extends Comparable<? super T>> {
 		}
 		return dec;
 	}
+	public static int numberOfBinarySearchTree(double totalNodes) {
+		double n=factorial(2*totalNodes);
+		double d=(factorial(totalNodes+1))*(factorial(totalNodes));
+		double differentTree=n/d;
+		return (int) differentTree;
+		
+	}
+	
+		public static int factorial(double i)
+		{
+			int fact=1;
+			while(i>0)
+			{
+				fact=(int) (fact*i);
+				i--;
+			}
+			return fact;
+		}
 
 }
