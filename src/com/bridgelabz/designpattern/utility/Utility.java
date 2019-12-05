@@ -259,6 +259,7 @@ public class Utility {
 		}
 
 		/* Serching sorting */
+		@SuppressWarnings("unused")
 		public static void searchingSorting(char characterStart) {
 			LocalTime time = java.time.LocalTime.now();
 			if (characterStart == 's' || characterStart == 'S') {
@@ -294,6 +295,7 @@ public class Utility {
 		/* Decimal to Binary */
 		public static void toBinary(int number) {
 			String s = "";
+			@SuppressWarnings("unused")
 			int count = 0;
 			while (number != 0) {
 				int a = number % 2;

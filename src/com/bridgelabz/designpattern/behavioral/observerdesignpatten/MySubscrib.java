@@ -2,6 +2,7 @@ package com.bridgelabz.designpattern.behavioral.observerdesignpatten;
 
 public class MySubscrib implements Observer {
 
+	@SuppressWarnings("unused")
 	private String name;
 	private Subject topic;
 
