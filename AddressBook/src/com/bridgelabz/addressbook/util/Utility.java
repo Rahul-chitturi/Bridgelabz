@@ -66,7 +66,10 @@ public class Utility {
 	}
 	public static boolean stringChecker(String str) {
 		char[] ch = str.toCharArray();
+<<<<<<< HEAD
 		@SuppressWarnings("unused")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 		String temp = "";
 		Predicate<Character> p = s -> s >= 97 && s <= 122 || s >= 65 && s <= 90 || s >= 48 && s <= 57;
 		for (char i : ch) {

@@ -64,7 +64,10 @@ public class CliniqueServiceImpl implements CliniqueService {
 
 
 		/** Reads doctor's data from json file **/
+<<<<<<< HEAD
 		@SuppressWarnings("rawtypes")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 		@Override
 		public void readDoctorData(String key, String value,String choice) {
 			
@@ -122,7 +125,10 @@ public class CliniqueServiceImpl implements CliniqueService {
 				//System.out.println("Tomorrow's Date: "+dateTime);
 				String response = Utility.inputString().toString();
 				if(response.equals("y")) {
+<<<<<<< HEAD
 					@SuppressWarnings("unused")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 					int count = 0;
 					JSONArray jsonArray = CliniqueRepository.readData(appointment);
 					JSONObject jsonObject = new JSONObject();
@@ -157,7 +163,10 @@ public class CliniqueServiceImpl implements CliniqueService {
 
 		}
 
+<<<<<<< HEAD
 		@SuppressWarnings({ "rawtypes", "unchecked" })
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 		private void updateDoctorData(JSONObject doctorJsonObject) {
 
 			jsonArray = CliniqueRepository.readData(doctor);
@@ -215,7 +224,10 @@ public class CliniqueServiceImpl implements CliniqueService {
 			CliniqueRepository.writeData(patient, jsonArray);
 		}
 
+<<<<<<< HEAD
 		@SuppressWarnings("rawtypes")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 		@Override
 		public void readPatientData(String key, String value) {
 			jsonArray = CliniqueRepository.readData(patient);

@@ -4,6 +4,11 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
+<<<<<<< HEAD
+=======
+import java.util.Set;
+
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -46,7 +51,11 @@ public class StockImplementation implements StockAccount {
 		StockData.writeData(file, baseJson);
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings({ "unchecked", "unused" })
+=======
+	@SuppressWarnings("unchecked")
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 	public void buyShare(double amount, String symbol, File fileWrite) {
 		int count = 0;
 		double price = 0;
@@ -97,7 +106,10 @@ public class StockImplementation implements StockAccount {
 
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 	private JSONArray updateCompanyDetails(JSONArray jsonArray, int numberOfShare , double price) {
 		long updatedShare = 0;
 
@@ -149,7 +161,10 @@ public class StockImplementation implements StockAccount {
 		File fileR = new File(pathe);
 		JSONObject json = StockData.readData(fileR);
 		JSONObject Stock = (JSONObject) json.get("STOCK MARKET");
+<<<<<<< HEAD
 		@SuppressWarnings("unused")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 		JSONArray arr = new JSONArray();
 
 		Object[] Keys = Stock.keySet().toArray();
@@ -167,7 +182,10 @@ public class StockImplementation implements StockAccount {
 		}
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 	private JSONObject updateAccountDetails(JSONObject accountJson, int numberOfShare) {
 		long share = (long) accountJson.get("PurchaseShare");
 		long updatedShare = 0;
@@ -192,7 +210,10 @@ public class StockImplementation implements StockAccount {
 		return accountJson;
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
+=======
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 	@Override
 	public void removeCompanyDetails(String symbol) {
 		JSONObject jsonObj = StockData.readData(fileRead);

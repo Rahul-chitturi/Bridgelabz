@@ -97,6 +97,10 @@ public class AddressBookServiceImpl implements AddressBookService {
 
 	}
 
+<<<<<<< HEAD
+=======
+	@SuppressWarnings("unchecked")
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 	@Override
 	public void delete(File file,String name) {
 		JSONObject json = new JSONObject();

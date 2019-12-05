@@ -3,6 +3,11 @@ package com.bridgelabz.stockaccountmanagement.utility;
 import java.io.File;
 import java.io.PrintStream;
 
+<<<<<<< HEAD
+=======
+import com.bridgelabz.stockaccountmanagement.model.StockPortfolio;
+
+>>>>>>> 079dd10ffc630928093a85722a6f4a3c02fa35b6
 //import com.bridgelabz.stockaccountmanagement.model.CompanyDetails;
 
 /*
