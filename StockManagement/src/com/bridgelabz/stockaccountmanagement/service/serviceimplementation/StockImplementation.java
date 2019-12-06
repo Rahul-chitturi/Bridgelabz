@@ -4,7 +4,7 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
-import java.util.Set;
+
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -50,6 +50,7 @@ public class StockImplementation implements StockAccount {
 
 	@SuppressWarnings("unchecked")
 	public void buyShare(double amount, String symbol, File fileWrite) {
+		@SuppressWarnings("unused")
 		int count = 0;
 		double price = 0;
 		JSONArray array, jsonArray = null;
@@ -99,6 +100,7 @@ public class StockImplementation implements StockAccount {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private JSONArray updateCompanyDetails(JSONArray jsonArray, int numberOfShare , double price) {
 		long updatedShare = 0;
 
@@ -150,6 +152,7 @@ public class StockImplementation implements StockAccount {
 		File fileR = new File(pathe);
 		JSONObject json = StockData.readData(fileR);
 		JSONObject Stock = (JSONObject) json.get("STOCK MARKET");
+		@SuppressWarnings("unused")
 		JSONArray arr = new JSONArray();
 
 		Object[] Keys = Stock.keySet().toArray();
@@ -167,6 +170,7 @@ public class StockImplementation implements StockAccount {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private JSONObject updateAccountDetails(JSONObject accountJson, int numberOfShare) {
 		long share = (long) accountJson.get("PurchaseShare");
 		long updatedShare = 0;
@@ -191,6 +195,7 @@ public class StockImplementation implements StockAccount {
 		return accountJson;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void removeCompanyDetails(String symbol) {
 		JSONObject jsonObj = StockData.readData(fileRead);

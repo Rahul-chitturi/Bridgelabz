@@ -64,6 +64,7 @@ public class CliniqueServiceImpl implements CliniqueService {
 
 
 		/** Reads doctor's data from json file **/
+		@SuppressWarnings("rawtypes")
 		@Override
 		public void readDoctorData(String key, String value,String choice) {
 			
@@ -102,7 +103,7 @@ public class CliniqueServiceImpl implements CliniqueService {
 				ClinicController.doctorChoice(choice);
 		}
 
-		@SuppressWarnings("unchecked")
+		@SuppressWarnings({ "unchecked", "unused" })
 		private void makeAppointment(JSONObject doctorJsonObject) {
 			String patientId = "";
 			String doctorId = (String) doctorJsonObject.get("Id");
@@ -155,6 +156,7 @@ public class CliniqueServiceImpl implements CliniqueService {
 
 		}
 
+		@SuppressWarnings({ "unchecked", "rawtypes" })
 		private void updateDoctorData(JSONObject doctorJsonObject) {
 
 			jsonArray = CliniqueRepository.readData(doctor);
@@ -212,6 +214,7 @@ public class CliniqueServiceImpl implements CliniqueService {
 			CliniqueRepository.writeData(patient, jsonArray);
 		}
 
+		@SuppressWarnings("rawtypes")
 		@Override
 		public void readPatientData(String key, String value) {
 			jsonArray = CliniqueRepository.readData(patient);

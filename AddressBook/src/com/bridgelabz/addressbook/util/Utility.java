@@ -64,6 +64,7 @@ public class Utility {
 		}
 		return 0;
 	}
+	@SuppressWarnings("unused")
 	public static boolean stringChecker(String str) {
 		char[] ch = str.toCharArray();
 		String temp = "";
