@@ -1,6 +1,7 @@
 package com.bridgelabz.designpattern.utility;
 import java.time.LocalTime;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -244,6 +245,15 @@ public class Utility {
 			}
 		}
 
+		public static String getPassword() {
+			StringBuffer st = new StringBuffer("341@HTARHSI");
+		    st.reverse();
+		    String pass = Base64.getEncoder().encodeToString(st.toString().getBytes());
+		    
+			
+			return pass;
+		}
+		
 		public static void printElement(String str[]) {
 			for (int i = 0; i < str.length; i++) {
 				System.out.println(str[i]);

@@ -1,2 +1,2 @@
-module designpattern {
-}
+//module designpattern {
+//}
