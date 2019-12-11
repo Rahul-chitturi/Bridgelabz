@@ -11,5 +11,7 @@
 	<classpathentry kind="lib" path="BridgeLab/src/LIB/jackson-mapper-asl-1.9.13.jar"/>
 	<classpathentry kind="lib" path="BridgeLab/src/LIB/json-simple-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/home/user/Desktop/activation.jar"/>
+	<classpathentry kind="lib" path="/home/user/Desktop/mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
