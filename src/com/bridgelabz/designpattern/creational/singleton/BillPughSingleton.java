@@ -10,4 +10,5 @@ public class BillPughSingleton {
 	    public static BillPughSingleton getInstance(){
 	        return SingletonHelper.INSTANCE;
 	    }
+	    
 }

@@ -1,5 +1,9 @@
 package com.bridgelabz.designpattern.creational.singleton;
 
-public class EnumSingleton {
 
+public enum EnumSingleton {
+    INSTANCE;
+    public void someMethod(String param) {
+        // some class member
+    }
 }

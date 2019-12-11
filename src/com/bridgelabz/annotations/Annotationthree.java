@@ -1,4 +1,4 @@
-package com.bridgelabz.designpattern.annotations;
+package com.bridgelabz.annotations;
 
 class base{ 
 	base(){
