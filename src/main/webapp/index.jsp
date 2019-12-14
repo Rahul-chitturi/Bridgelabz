@@ -1,3 +1,7 @@
+<%@page import="com.bridgelabz.loginregistration.controller.Login"%> 
+<%@page import="java.util.ArrayList"%> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +56,13 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-
+					<%String name = (String)request.getAttribute("myname");
+					if(name==null){
+						name="";
+					}
+					%>
+ <p><%= name%></p>
+                
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>

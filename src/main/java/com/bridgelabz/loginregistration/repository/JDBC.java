@@ -23,14 +23,17 @@ public class JDBC {
 		}
 		return null;
 	}
-	public static void display() {
+	public static ResultSet getFullTable() {
+		ResultSet rs=null;
 		try {
 		Statement stmt=getConnect().createStatement();  
-		ResultSet rs=stmt.executeQuery("select * from student");  
-		while(rs.next())  
-		System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+" " +rs.getString(4)+" "+rs.getString(5)+" " +rs.getString(6) );  
+		 rs=stmt.executeQuery("select * from User_Details");
+//while(rs.next())  
+	//System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+" " +rs.getString(4)+" "+rs.getString(5)+" " +rs.getString(6) );  
 		getConnect().close();  
+		return rs;
 		}catch(Exception e){ System.out.println(e);}   
+		return rs;
 	}
 	
 	public int getLoginEmailPassword(LoginModel o) {
