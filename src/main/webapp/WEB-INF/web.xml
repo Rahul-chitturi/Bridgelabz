@@ -4,6 +4,16 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<display-name>LoginFilter</display-name>
+		<description></description>
+		<filter-class>com.bridgelabz.loginregistration.controller.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/LoginFilter</url-pattern>
+	</filter-mapping>
 	<servlet>
 		<servlet-name>Login</servlet-name>
 		<display-name>Login</display-name>
@@ -22,11 +32,36 @@
 		<description></description>
 		<servlet-class>com.bridgelabz.loginregistration.controller.Logout</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<display-name>Delete</display-name>
+		<description></description>
+		<servlet-class>com.bridgelabz.loginregistration.controller.Delete</servlet-class>
+	</servlet>
 	<servlet>
 		<servlet-name>Success</servlet-name>
 		<display-name>Success</display-name>
 		<description></description>
 		<servlet-class>com.bridgelabz.loginregistration.controller.Success</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Edit</servlet-name>
+		<display-name>Edit</display-name>
+		<description></description>
+		<servlet-class>com.bridgelabz.loginregistration.controller.Edit</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Update</servlet-name>
+		<display-name>Update</display-name>
+		<description></description>
+		<servlet-class>com.bridgelabz.loginregistration.controller.Update</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Forget</servlet-name>
+		<display-name>Forget</display-name>
+		<description></description>
+		<servlet-class>com.bridgelabz.loginregistration.controller.Forget</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
@@ -40,8 +75,25 @@
 		<servlet-name>Logout</servlet-name>
 		<url-pattern>/Logout</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/Delete</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Success</servlet-name>
 		<url-pattern>/Success</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/Edit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Update</servlet-name>
+		<url-pattern>/Update</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Forget</servlet-name>
+		<url-pattern>/Forget</url-pattern>
 	</servlet-mapping>
 </web-app>

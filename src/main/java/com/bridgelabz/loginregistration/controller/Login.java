@@ -3,14 +3,14 @@ package com.bridgelabz.loginregistration.controller;
 import java.io.IOException;
 //import java.io.PrintWriter;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
 
 import com.bridgelabz.loginregistration.model.LoginModel;
 import com.bridgelabz.loginregistration.repository.JDBC;
@@ -30,20 +30,14 @@ public class Login extends HttpServlet {
      JDBC j = new JDBC();
      int i= j.getLoginEmailPassword(n);
      if(i==1) {
+    
     	ResultSet fulltable= JDBC.getFullTable();
-    	try {
-    		while(fulltable.next())
-			System.out.println(fulltable.getString("First_Name").toString());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	 request.setAttribute("fulltable", fulltable);
-  String Username[] =Email.split("@");
-  HttpSession session = request.getSession(true);
-  session.setAttribute("user", Username[0]);
-  session.setMaxInactiveInterval(10250); 
-  RequestDispatcher rd = request.getRequestDispatcher("Success.jsp");
+    	request.setAttribute("fulltable", fulltable);
+    	  String Username[] =Email.split("@");
+    		 n.setEmail(Username[0]);
+    	request.setAttribute("rahul",n );
+
+  RequestDispatcher rd = request.getRequestDispatcher("Success");
   rd.forward(request, response);
      }
      

@@ -23,6 +23,17 @@ public class JDBC {
 		}
 		return null;
 	}
+	public static ResultSet getEdit(String id) {
+		ResultSet rs=null;
+		try {
+		Statement stmt=getConnect().createStatement();  
+		 rs=stmt.executeQuery("select * from User_Details where Id = "+id);
+		 
+	getConnect().close();  
+		return rs;
+		}catch(Exception e){ System.out.println(e);}   
+		return rs;
+	}
 	public static ResultSet getFullTable() {
 		ResultSet rs=null;
 		try {
@@ -55,6 +66,29 @@ public class JDBC {
 	return -1;
 	}
 	
+	public int delete(String email) {
+		try {
+			PreparedStatement stmt=getConnect().prepareStatement("delete from User_Details where Id=? ");
+			stmt.setString(1,email);
+			int i=stmt.executeUpdate(); 
+			return i;  
+		}catch(Exception e){ System.out.println(e);}  	  
+		return 0;
+		}
+		
+	public static int update(RegistrationModel n) {
+		try {
+		PreparedStatement stmt=getConnect().prepareStatement("update User_Details set  email = ? , First_Name = ?, Last_Name =? , Contact_Number =? where Id = ?");  
+		stmt.setString(1,n.getEmail());  
+		stmt.setString(2,n.getFirstName());
+		stmt.setString(3,n.getLastName()); 
+		stmt.setLong(4, n.getNumber());
+		stmt.setInt(5, n.getId());
+		int i=stmt.executeUpdate();  
+		return i;  
+		}catch(Exception e){ System.out.println(e);}  	  
+	return 0;
+	}
 	public int edit(RegistrationModel n) {
 		try {
 		PreparedStatement stmt=getConnect().prepareStatement("insert into User_Details( email , First_Name, Last_Name , Password , Contact_Number  ) values(?,?,?, ?, ?);");  

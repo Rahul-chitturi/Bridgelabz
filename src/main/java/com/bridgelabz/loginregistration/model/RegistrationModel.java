@@ -36,7 +36,14 @@ public class RegistrationModel {
 	private String LastName;
 	private	String Email ;   
 	private String Pass;
-	private	long Number ;   
+	private	long Number ; 
+	private int Id;
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
 	
 	
 }

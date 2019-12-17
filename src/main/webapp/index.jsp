@@ -32,11 +32,16 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+
+<%
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.addHeader("Cache-Control", "post-check=0, pre-check=0");
+response.setHeader("Pragma", "no-cache");
+%>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="Login" method="post">
+				<form class="login100-form validate-form" action="LoginFilter" method="post">
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -45,7 +50,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter valid Email">
-						<input class="input100" type="text" name="email">
+						<input class="input100" type="text" name="email" >
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -55,7 +60,10 @@
 						</span>
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
+
 					</div>
+									
+						
 					<%String name = (String)request.getAttribute("myname");
 					if(name==null){
 						name="";
@@ -73,6 +81,7 @@
 					</div>
 
 					<div class="text-center p-t-115">
+					<a  class="txt2" href="forget.jsp">forget password?</a><br>
 						<span class="txt1">
 							Don't have an account?
 						</span>
