@@ -15,9 +15,6 @@
 <!-- Custom stlylesheet -->
 <link type="text/css" rel="stylesheet"
 	href="resources/err/css/style.css" />
-
-
-
 </head>
 
 <body>

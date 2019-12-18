@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bridgelabz.loginregistration.model.LoginModel;
 import com.bridgelabz.loginregistration.repository.JDBC;
 
-/**
- * Servlet implementation class Login
- */
+
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
