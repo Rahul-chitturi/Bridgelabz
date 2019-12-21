@@ -1,1 +1,0 @@
-package com.bridgelabz.designpattern.creational.prototype.controller;
