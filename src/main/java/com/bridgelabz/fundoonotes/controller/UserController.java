@@ -19,7 +19,7 @@ import com.bridgelabz.fundoonotes.dto.UserDto;
 import com.bridgelabz.fundoonotes.model.User;
 import com.bridgelabz.fundoonotes.responses.Response;
 import com.bridgelabz.fundoonotes.responses.UserAuthenticationResponse;
-import com.bridgelabz.fundoonotes.service.Service;
+import com.bridgelabz.fundoonotes.service.UserService;
 import com.bridgelabz.fundoonotes.utility.JwtGenerator;
 
 @RestController
@@ -27,7 +27,7 @@ public class UserController {
 
 	
 	@Autowired
-	private Service userService;
+	private UserService userService;
 
 	@Autowired
 	private JwtGenerator tokenGenerator;
@@ -37,6 +37,7 @@ public class UserController {
 	private ResponseEntity<Response> registration(@Valid @RequestBody UserDto user) {
 
 		boolean is_saved_succussefully = userService.registration(user);
+		user.setPassword("*****");
 		if (is_saved_succussefully) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(new Response("registration successfull", 200, user));
 		} else {
@@ -50,7 +51,7 @@ public class UserController {
 	private ResponseEntity<UserAuthenticationResponse> login(@Valid @RequestBody LoginDetails loginDetails) {
 
 		User userInformation = userService.login(loginDetails);
-
+loginDetails.setPassword("****");
 		if (userInformation != null) {
 			String token=tokenGenerator.jwtToken(userInformation.getId());
 			return ResponseEntity.status(HttpStatus.ACCEPTED).header("Login successfull", loginDetails.getEmail())
@@ -103,6 +104,4 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new Response("User Doesn't Exist", 400));
 		}
 	}
-	
-	
 }

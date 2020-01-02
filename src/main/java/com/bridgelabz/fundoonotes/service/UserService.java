@@ -7,7 +7,7 @@ import com.bridgelabz.fundoonotes.dto.Updatepassword;
 import com.bridgelabz.fundoonotes.dto.UserDto;
 import com.bridgelabz.fundoonotes.model.User;
 
-public interface Service {
+public interface UserService {
 
 	boolean registration(UserDto user);
 //	boolean findOneByEmail(String email);

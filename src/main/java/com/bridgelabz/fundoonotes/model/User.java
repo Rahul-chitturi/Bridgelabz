@@ -18,7 +18,7 @@ public class User {
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 
 	@NotNull
@@ -41,6 +41,17 @@ public class User {
 	@Column(name = "created_at")
 	public Date createdAt;
 
+	@Column(name = "last_login_time")
+	public Date lastLoginTime;
+	
+	public Date getLastLoginTime() {
+		return lastLoginTime;
+	}
+
+	public void setLastLoginTime() {
+		this.lastLoginTime = new Date();
+	}
+
 	@Column(columnDefinition = "boolean default false")
 	private boolean is_email_verified;
 
@@ -51,21 +62,20 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+    
+	
 	public User() {
 
 	}
 
-	public User(Long id, String firstName, String lastName, String email, long mobilenumber, String password,
-			boolean is_email_verified) {
+	public User( String firstName, String lastName, String email, long mobilenumber, String password) {
 		super();
-		Id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.mobilenumber = mobilenumber;
 		this.password = password;
-		this.is_email_verified = is_email_verified;
+		
 	}
 
 	
