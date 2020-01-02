@@ -1,24 +1,31 @@
 package com.bridgelabz.fundoonotes.dto;
 
 
+import javax.validation.constraints.NotNull;
+
+
 public class UserDto {
 
-	
+
 	private String firstName;
 	
 	private String lastName;
 
+	@NotNull
 	private String email;
 	
+    @NotNull
 	private long mobilenumber;
 	
+    @NotNull
 	private String password;
 	
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
+		
 		this.firstName = firstName;
 	}
 	public String getLastName() {
