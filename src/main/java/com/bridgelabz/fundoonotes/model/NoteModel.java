@@ -2,16 +2,23 @@ package com.bridgelabz.fundoonotes.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "note")
 public class NoteModel {
 
+	
+	public NoteModel() {
+		
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -39,11 +46,11 @@ public class NoteModel {
 		this.contant = contant;
 	}
 
-	@ManyToOne(cascade= CascadeType.ALL)
-	@JoinColumn(name = "Id")
+	@ManyToOne
+	@JoinColumn(name = "userId")
 	private User userNote;
 	
-	@Column(columnDefinition = "boolean default 'ffffff")
+	@Column(columnDefinition = "varchar(10) default 'ffffff'")
 	private String NoteColor;
 	
 	private Date localReminder;
@@ -103,6 +110,7 @@ public class NoteModel {
 	}
 
 	public void setCreatedAt() {
+		setUpdatedAt();
 		this.createdAt = new Date();
 	}
 

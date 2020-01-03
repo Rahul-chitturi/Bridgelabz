@@ -14,16 +14,20 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	@Query(value = "SELECT created_at, email, first_name, is_email_verified, last_name,last_login_time, mobilenumber, password , id FROM user_details WHERE email = ?", nativeQuery = true)
 	User findByEmailAddress(String emailAddress);
+	 
+	@Modifying
+	@Transactional
+	@Query(value = "insert into user_details (created_at, email, first_name, last_name, mobilenumber, password ) values (?, ?, ?, ?, ?, ?)", nativeQuery = true)
+	void inserData(Date date ,  String email ,  String firstName , String lastname , long mobile  , String pass  ) ;
 
-	@Query(value = "insert into user_details (created_at, email, first_name, is_email_verified, last_name, mobilenumber, password , last_login_time) values (?, ?, ?, ?, ?, ?, ? ,?)", nativeQuery = true)
-	void sava(User user);
-
-	@Query(value = "select created_at, email, first_name, is_email_verified, last_name, mobilenumber, password , id from user_details where id = ? ", nativeQuery = true)
+	@Query(value = "select created_at, email, first_name, is_email_verified, last_name, last_login_time, mobilenumber, password , id from user_details where id = ? ", nativeQuery = true)
 	User findById(long id);
 
 	@Modifying
 	@Transactional
 	@Query(value = "update user_details set last_login_time  = ? where id = ?", nativeQuery = true)
 	void updateLastLoginTime(Date date, long id);
+
+	
 
 }

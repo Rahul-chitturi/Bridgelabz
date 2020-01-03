@@ -44,7 +44,7 @@ public class UserServiceImplementation implements UserService {
 				userDetails.setCreatedAt();
 				userDetails.setLastLoginTime();
 				userDetails.setPassword(Utility.getEncryPassWord(user.getPassword()));
-				userRepository.save(userDetails);
+				userRepository.inserData(userDetails.getCreatedAt(), userDetails.getEmail(), userDetails.getFirstName(), userDetails.getLastName(), userDetails.getMobilenumber(), userDetails.getPassword());
 				// MailSender.sendMail(user.getEmail());
 				User userDetailtosendMail = userRepository.findByEmailAddress(user.getEmail());
 				String response = "http://localhost:8080/users/verify/"
@@ -55,6 +55,7 @@ public class UserServiceImplementation implements UserService {
 				return false;
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}

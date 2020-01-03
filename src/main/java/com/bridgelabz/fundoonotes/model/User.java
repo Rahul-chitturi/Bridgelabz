@@ -95,13 +95,7 @@ public class User {
 		this.firstName = firstName;
 	}
 
-	public String getFastName() {
-		return lastName;
-	}
 
-	public void setFastName(String fastName) {
-		this.lastName = fastName;
-	}
 
 	public String getEmail() {
 		return email;
