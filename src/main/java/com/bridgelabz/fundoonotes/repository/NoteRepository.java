@@ -51,7 +51,12 @@ public interface NoteRepository extends JpaRepository<NoteModel, Long>{
 
 	@Modifying
 	@Transactional
-	@Query(value = "update note set title = ? , title = ? where user_id = ? AND id = ?" ,  nativeQuery = true)
+	@Query(value = "update note set contant = ? , title = ? , updated_at = ? where user_id = ? AND id = ?" ,  nativeQuery = true)
 	void updateData(String contant, String title, Date updatedAt , long userId, long noteId );
+
+	@Modifying
+	@Transactional
+	@Query(value = "update note set local_reminder_status = ? , local_reminder = ? , updated_at = ? where user_id = ? AND id = ?" ,  nativeQuery = true)
+	void reminder(String localReminderStatus, Date localReminder, Date updatedAt, long id, long noteId);
 
 }

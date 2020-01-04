@@ -1,16 +1,20 @@
 package com.bridgelabz.fundoonotes.dto;
 
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
 public class UserDto {
-
-
+    
+	@NotBlank
 	private String firstName;
 	
+	@NotBlank
 	private String lastName;
 
+	@Email
 	@NotNull
 	private String email;
 	

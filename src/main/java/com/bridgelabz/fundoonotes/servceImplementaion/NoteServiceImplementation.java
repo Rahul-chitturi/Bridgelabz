@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.bridgelabz.fundoonotes.dto.NoteDto;
+import com.bridgelabz.fundoonotes.dto.ReminderDto;
 import com.bridgelabz.fundoonotes.model.NoteModel;
 import com.bridgelabz.fundoonotes.model.User;
 import com.bridgelabz.fundoonotes.repository.NoteRepository;
@@ -172,8 +173,9 @@ e.printStackTrace();
 			LOGGER.info("Id is :" + id + " ,Description :" + noteDto.getNoteContant());
 			User user = userRepository.findById(id);
 			if (user != null) {
-				NoteModel note = new NoteModel(noteDto.getNoteTitle(), noteDto.getNoteContant());
-				note.setUserNote(user);
+				NoteModel note = noteRepository.checkById(noteId);
+				note.setContant(noteDto.getNoteContant());
+				note.setTitle(noteDto.getNoteTitle());
 				note.setUpdatedAt();
 				noteRepository.updateData(note.getContant(), note.getTitle(), note.getUpdatedAt() , id ,  noteId);
 				return true;
@@ -187,6 +189,31 @@ e.printStackTrace();
 		}
 		
 
+	}
+
+
+
+	@Override
+	public boolean reminder(ReminderDto reminderDto, String token, long noteId) {
+
+		try {
+			long id = tokenGenerator.parseJWT(token);
+			LOGGER.info("Id is :" + id );
+			User user = userRepository.findById(id);
+			if (user != null) {
+				NoteModel note = noteRepository.checkById(noteId);
+				note.setLocalReminderStatus(reminderDto.getLocalReminderStatus());
+				note.setLocalReminder(reminderDto.getLocalReminder());
+				System.out.println(note.getLocalReminder());
+				note.setUpdatedAt();
+				noteRepository.reminder(note.getLocalReminderStatus(), note.getLocalReminder(), note.getUpdatedAt() , id ,  noteId);
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 }

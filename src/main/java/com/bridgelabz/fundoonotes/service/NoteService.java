@@ -1,6 +1,7 @@
 package com.bridgelabz.fundoonotes.service;
 
 import com.bridgelabz.fundoonotes.dto.NoteDto;
+import com.bridgelabz.fundoonotes.dto.ReminderDto;
 
 public interface NoteService {
 
@@ -16,8 +17,8 @@ public interface NoteService {
 
 	int delete(String token, long noteId);
 
-	
-
 	boolean updateNote(NoteDto noteDto, String token, long noteId);
+
+	boolean reminder(ReminderDto reminderDto, String token, long noteId);
 
 }

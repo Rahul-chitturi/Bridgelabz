@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bridgelabz.fundoonotes.dto.NoteDto;
+import com.bridgelabz.fundoonotes.dto.ReminderDto;
 import com.bridgelabz.fundoonotes.responses.Response;
 import com.bridgelabz.fundoonotes.service.NoteService;
 
@@ -112,4 +113,16 @@ public class NoteController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Response("Something went wrong", 400));
 		}
 	}
+	
+@PostMapping("/notes/reminder/{id}")
+private ResponseEntity<Response> reminder(@PathVariable("id") long noteId, @RequestBody ReminderDto reminderDto, @RequestHeader("token") String token  )
+		throws Exception {
+
+	boolean result = noteService.reminder(reminderDto, token ,noteId);
+	if (result) {
+		return ResponseEntity.status(HttpStatus.OK).body(new Response("reminder is update successfully", 200));
+	} else {
+		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Response("Something went wrong", 400));
+	}
+}
 }

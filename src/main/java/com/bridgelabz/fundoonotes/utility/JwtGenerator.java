@@ -7,7 +7,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.bridgelabz.fundoonotes.dto.TokenDto;
+
 
 @Component
 public class JwtGenerator {
@@ -36,16 +36,16 @@ public class JwtGenerator {
 		}
 		return userId;
 	}
-	
-	public TokenDto parseJWTNote(String jwt)
-			throws JWTVerificationException, IllegalArgumentException, UnsupportedEncodingException {
-        TokenDto noteToken = new TokenDto();
-		if (jwt != null) {
-		noteToken.setNoteId(JWT.require(Algorithm.HMAC512(SECRET)).build().verify(jwt).getClaim("Note_id").asInt());
-		noteToken.setUserId(JWT.require(Algorithm.HMAC512(SECRET)).build().verify(jwt).getClaim("id").asInt());
-		}
-		
-	return	noteToken;
-	}
+//	
+//	public TokenDto parseJWTNote(String jwt)
+//			throws JWTVerificationException, IllegalArgumentException, UnsupportedEncodingException {
+//        TokenDto noteToken = new TokenDto();
+//		if (jwt != null) {
+//		noteToken.setNoteId(JWT.require(Algorithm.HMAC512(SECRET)).build().verify(jwt).getClaim("Note_id").asInt());
+//		noteToken.setUserId(JWT.require(Algorithm.HMAC512(SECRET)).build().verify(jwt).getClaim("id").asInt());
+//		}
+//		
+//	return	noteToken;
+//	}
 
 }
