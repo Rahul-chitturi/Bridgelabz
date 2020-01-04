@@ -3,6 +3,7 @@ package com.bridgelabz.fundoonotes.dto;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 public class ReminderDto {
 
 	private String localReminderStatus;
