@@ -30,7 +30,7 @@ public class UserServiceImplementation implements UserService {
 	private Utility util;
 
 	@Override
-	public boolean registration(UserDto user) {
+	public User registration(UserDto user) {
 
 		try {
 			User checkEmailAvailability = userRepository.findByEmailAddress(user.getEmail());
@@ -46,13 +46,13 @@ public class UserServiceImplementation implements UserService {
 				String response = "http://localhost:8080/users/verify/"
 						+ tokenGenerator.jwtToken(userDetailtosendMail.getId());
 				util.sendVerificationEmail(userDetailtosendMail.getEmail(), response);
-				return true;
+				return userDetails;
 			} else {
-				return false;
+				return null;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			return false;
+			return null;
 		}
 	}
 
@@ -62,7 +62,6 @@ public class UserServiceImplementation implements UserService {
 		User userInfo = userRepository.findByEmailAddress(loginDetails.getEmail());
 		if (userInfo != null) {
 			LOGGER.info("logining user details" + userInfo.getEmail());
-
 			if (userInfo.getEmail().equals(loginDetails.getEmail())) {
 				if (userInfo.isIs_email_verified() == true) {
 					boolean is_password_matched = Utility.checkPassword(userInfo.getPassword(),
@@ -87,7 +86,7 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	@Override
-	public boolean verify(String token) {
+	public User verify(String token) {
 		try {
 			LOGGER.info("id in verification" + (long) tokenGenerator.parseJWT(token));
 			Long id = (long) tokenGenerator.parseJWT(token);
@@ -96,14 +95,14 @@ public class UserServiceImplementation implements UserService {
 				if (!userInfo.isIs_email_verified()) {
 					userInfo.setIs_email_verified(true);
 					userRepository.verify(userInfo.getId());
-					return true;
+					return userInfo;
 				} else {
-					return true;
+					return userInfo;
 				}
 			}
-			return false;
+			return null;
 		} catch (Exception e) {
-			return false;
+			return null;
 		}
 	}
 

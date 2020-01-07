@@ -9,12 +9,12 @@ import com.bridgelabz.fundoonotes.model.User;
 
 public interface UserService {
 
-	boolean registration(UserDto user);
+	User registration(UserDto user);
 //	boolean findOneByEmail(String email);
 
 	User login(@Valid LoginDetails loginDetails);
 
-	boolean verify(String token);
+	User verify(String token);
 
 	boolean updatePassword(String token, Updatepassword updatepassword);
 
