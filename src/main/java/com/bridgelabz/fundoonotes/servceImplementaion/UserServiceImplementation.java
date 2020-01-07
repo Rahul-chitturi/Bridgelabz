@@ -1,7 +1,6 @@
 package com.bridgelabz.fundoonotes.servceImplementaion;
 
 import java.util.Date;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,18 +33,15 @@ public class UserServiceImplementation implements UserService {
 	public boolean registration(UserDto user) {
 
 		try {
-//			findOneByEmail(user.getEmail());
-
 			User checkEmailAvailability = userRepository.findByEmailAddress(user.getEmail());
-			System.out.println(checkEmailAvailability);
 			if (checkEmailAvailability == null) {
 				User userDetails = new User(user.getFirstName(), user.getLastName(), user.getEmail(),
 						user.getMobilenumber(), user.getPassword());
 				userDetails.setCreatedAt();
 				userDetails.setLastLoginTime();
 				userDetails.setPassword(Utility.getEncryPassWord(user.getPassword()));
-				userRepository.inserData(userDetails.getCreatedAt(), userDetails.getEmail(), userDetails.getFirstName(), userDetails.getLastName(), userDetails.getMobilenumber(), userDetails.getPassword());
-				// MailSender.sendMail(user.getEmail());
+				userRepository.inserData(userDetails.getCreatedAt(), userDetails.getEmail(), userDetails.getFirstName(),
+						userDetails.getLastName(), userDetails.getMobilenumber(), userDetails.getPassword());
 				User userDetailtosendMail = userRepository.findByEmailAddress(user.getEmail());
 				String response = "http://localhost:8080/users/verify/"
 						+ tokenGenerator.jwtToken(userDetailtosendMail.getId());
@@ -95,11 +91,15 @@ public class UserServiceImplementation implements UserService {
 		try {
 			LOGGER.info("id in verification" + (long) tokenGenerator.parseJWT(token));
 			Long id = (long) tokenGenerator.parseJWT(token);
-			Optional<User> userInfo = userRepository.findById(id);
-			if (userInfo.isPresent()) {
-				userInfo.get().setIs_email_verified(true);
-				userRepository.save(userInfo.get());
-				return true;
+			User userInfo = userRepository.findoneById(id);
+			if (userInfo != null) {
+				if (!userInfo.isIs_email_verified()) {
+					userInfo.setIs_email_verified(true);
+					userRepository.verify(userInfo.getId());
+					return true;
+				} else {
+					return true;
+				}
 			}
 			return false;
 		} catch (Exception e) {
@@ -114,7 +114,7 @@ public class UserServiceImplementation implements UserService {
 
 			if (updatepassword.getPassword().equals(updatepassword.getConformPassword())) {
 				long id = tokenGenerator.parseJWT(token);
-				User isIdAvailable = userRepository.findById(id);
+				User isIdAvailable = userRepository.findoneById(id);
 				if (isIdAvailable != null) {
 					isIdAvailable.setPassword(Utility.getEncryPassWord((updatepassword.getPassword())));
 					userRepository.save(isIdAvailable);

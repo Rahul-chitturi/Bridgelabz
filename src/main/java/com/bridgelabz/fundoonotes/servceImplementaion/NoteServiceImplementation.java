@@ -37,7 +37,7 @@ public class NoteServiceImplementation implements NoteService {
 		try {
 			long id = tokenGenerator.parseJWT(token);
 			LOGGER.info("Id is :" + id + " ,Description :" + noteDto.getNoteContant());
-			User user = userRepository.findById(id);
+			User user = userRepository.findoneById(id);
 			if (user != null) {
 				NoteModel note = new NoteModel(noteDto.getNoteTitle(), noteDto.getNoteContant());
 				note.setUserNote(user);
@@ -171,7 +171,7 @@ e.printStackTrace();
 		try {
 			long id = tokenGenerator.parseJWT(token);
 			LOGGER.info("Id is :" + id + " ,Description :" + noteDto.getNoteContant());
-			User user = userRepository.findById(id);
+			User user = userRepository.findoneById(id);
 			if (user != null) {
 				NoteModel note = noteRepository.checkById(noteId);
 				note.setContant(noteDto.getNoteContant());
@@ -199,7 +199,7 @@ e.printStackTrace();
 		try {
 			long id = tokenGenerator.parseJWT(token);
 			LOGGER.info("Id is :" + id );
-			User user = userRepository.findById(id);
+			User user = userRepository.findoneById(id);
 			if (user != null) {
 				NoteModel note = noteRepository.checkById(noteId);
 				note.setLocalReminderStatus(reminderDto.getLocalReminderStatus());

@@ -11,14 +11,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "note")
+@NoArgsConstructor
+@Getter
+@Setter
 public class NoteModel {
-
-	
-	public NoteModel() {
-		
-	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -32,6 +34,7 @@ public class NoteModel {
 	
 	@Column(columnDefinition = "boolean default false")
 	private boolean isArchived;
+	
 	
 	@Column(columnDefinition = "boolean default false")
 	private boolean isDeleted;
@@ -57,29 +60,7 @@ public class NoteModel {
 	
 	private String localReminderStatus;
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getContant() {
-		return contant;
-	}
-
-	public void setContant(String contant) {
-		this.contant = contant;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
+	
 
 	public boolean isPinned() {
 		return isPinned;
@@ -105,54 +86,13 @@ public class NoteModel {
 		this.isDeleted = isDeleted;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
 	public void setCreatedAt() {
 		setUpdatedAt();
 		this.createdAt = new Date();
 	}
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
 
 	public void setUpdatedAt() {
 		this.updatedAt = new Date();
-	}
-
-
-
-	public User getUserNote() {
-		return userNote;
-	}
-
-	public void setUserNote(User userNote) {
-		this.userNote = userNote;
-	}
-
-	public String getNoteColor() {
-		return NoteColor;
-	}
-
-	public void setNoteColor(String noteColor) {
-		NoteColor = noteColor;
-	}
-
-	public Date getLocalReminder() {
-		return localReminder;
-	}
-
-	public void setLocalReminder(Date localReminder) {
-		this.localReminder = localReminder;
-	}
-
-	public String getLocalReminderStatus() {
-		return localReminderStatus;
-	}
-
-	public void setLocalReminderStatus(String localReminderStatus) {
-		this.localReminderStatus = localReminderStatus;
 	}
 }

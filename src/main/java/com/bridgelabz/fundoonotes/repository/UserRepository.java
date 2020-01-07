@@ -21,12 +21,17 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	void inserData(Date date ,  String email ,  String firstName , String lastname , long mobile  , String pass  ) ;
 
 	@Query(value = "select created_at, email, first_name, is_email_verified, last_name, last_login_time, mobilenumber, password , id from user_details where id = ? ", nativeQuery = true)
-	User findById(long id);
+	User findoneById(long id);
 
 	@Modifying
 	@Transactional
 	@Query(value = "update user_details set last_login_time  = ? where id = ?", nativeQuery = true)
 	void updateLastLoginTime(Date date, long id);
+
+	@Modifying
+	@Transactional
+	@Query(value = "update user_details set is_email_verified =  true where id = ?", nativeQuery = true)
+	void verify(Long id);
 
 	
 
